@@ -7,5 +7,5 @@ services:
       - "4566-4599:4566-4599"
     environment:
       - DEFAULT_REGION=us-east-1
-      - SERVICES=s3,dynamodb,lambda
+      - SERVICES=s3,dynamodb,lambda,sqs,sns
 
