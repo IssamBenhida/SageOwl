@@ -1,11 +1,18 @@
-version: '3.7'
-
+version: '2.1'
 services:
   localstack:
-    image: localstack/localstack
+    image: localstack/localstack-full:0.12.6
     ports:
-      - "4566-4599:4566-4599"
+      - "53:53"
+      - "443:443"
+      - "4510-4520:4510-4520"
+      - "4566-4620:4566-4620"
+      - "${PORT_WEB_UI-8080}:${PORT_WEB_UI-8080}"
     environment:
-      - DEFAULT_REGION=us-east-1
-      - SERVICES=s3,dynamodb,lambda,sqs,sns
-
+      - SERVICES=serverless,cognito,cloudformation,s3,dynamodb
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
