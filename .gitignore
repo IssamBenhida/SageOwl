@@ -2,3 +2,6 @@
 /.terraform
 .terraform.lock.hcl
 /localstack_providers_override.tf
+/volume/
+/output.txt
+/index.zip
