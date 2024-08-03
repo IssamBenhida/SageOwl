@@ -22,4 +22,15 @@ Invoking a lambda function:
 awslocal lambda invoke --function-name mylambda output.txt
 ``` 
 
-
+installing cloudwatch agent service
+```bash
+/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m onPremise -c file:cloudwatch.json -s
+```
+start cloudwatch agent
+```bash
+service amazon-cloudwatch-agent start 
+```
+provoke it
+```bash
+echo "Test log entry" >> /var/log/syslog
+```
