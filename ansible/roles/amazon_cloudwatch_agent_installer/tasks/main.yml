@@ -1,0 +1,32 @@
+---
+# tasks file for amazon_cloudwatch_agent_installer
+- name: Download Amazon CloudWatch Agent .deb package
+  get_url:
+    url: "{{ cwa_download_url }}"
+    dest: "{{ cwa_package_dest }}"
+  notify: Restart CloudWatch Agent
+
+- name: Install Amazon CloudWatch Agent
+  apt:
+    deb: "{{ cwa_package_dest }}"
+  notify: Restart CloudWatch Agent
+
+- name: Upload CloudWatch Agent configuration file
+  template:
+    src: localstack-cwa-config.json.j2
+    dest: "{{ cwa_config_path }}"
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Restart CloudWatch Agent
+
+- name: Deploy CloudWatch Agent
+  command: "{{ cwa_service_path }} -a fetch-config -m onPremise -c file:{{ cwa_config_path }} -s"
+  notify: Restart CloudWatch Agent
+
+- name: Ensure CloudWatch Agent Service is started and enabled
+  systemd:
+    name: "{{ cwa_service_name }}"
+    state: started
+    enabled: yes
+  notify: Restart CloudWatch Agent

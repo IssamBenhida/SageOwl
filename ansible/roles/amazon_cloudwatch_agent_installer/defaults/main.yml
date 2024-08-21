@@ -1,0 +1,8 @@
+---
+# defaults file for amazon_cloudwatch_agent_installer
+cwa_download_url: https://s3.amazonaws.com/amazoncloudwatch-agent/debian/amd64/latest/amazon-cloudwatch-agent.deb
+cwa_version: latest
+cwa_config_path: /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+cwa_service_name: amazon-cloudwatch-agent
+cwa_package_dest: /tmp/amazon-cloudwatch-agent.deb
+cwa_service_path: /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl

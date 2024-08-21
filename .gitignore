@@ -1,8 +1,4 @@
 /.idea
 /.terraform
 .terraform.lock.hcl
-/localstack_providers_override.tf
-/volume/
-/lambda/
-/output.txt
-/index.zip
+index.zip

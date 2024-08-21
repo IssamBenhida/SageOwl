@@ -7,6 +7,43 @@ terraform {
   }
 }
 
+data "archive_file" "lambda" {
+  source_file = "index.py"
+  output_path = "index.zip"
+  type        = "zip"
+}
+
+data "aws_iam_policy_document" "lambda_policy" {
+  version = "2012-10-17"
+  statement {
+    effect = "Allow"
+    actions = [
+      "firehose:PutRecord",
+      "firehose:PutRecordBatch"
+    ]
+    resources = [aws_kinesis_firehose_delivery_stream.example.arn]
+  }
+  depends_on = [aws_kinesis_firehose_delivery_stream.example]
+}
+
+resource "aws_iam_role" "lambda_role" {
+  assume_role_policy = data.aws_iam_policy_document.lambda_policy.json
+  depends_on = [aws_kinesis_firehose_delivery_stream.example]
+}
+
+resource "aws_lambda_function" "processor" {
+  function_name = "transformer"
+  filename      = "index.zip"
+  role          = aws_iam_role.lambda_role.arn
+  handler       = "index.handler"
+
+  source_code_hash = data.archive_file.lambda.output_base64sha256
+
+  runtime = "python3.7"
+  depends_on = [aws_kinesis_firehose_delivery_stream.example]
+}
+
+
 resource "aws_cloudwatch_log_group" "example" {
   name = "localstack-log-group"
 }
@@ -14,17 +51,17 @@ resource "aws_cloudwatch_log_group" "example" {
 resource "aws_cloudwatch_log_stream" "example" {
   log_group_name = aws_cloudwatch_log_group.example.name
   name           = "local-instance"
-  depends_on     = [aws_cloudwatch_log_group.example]
+  depends_on = [aws_cloudwatch_log_group.example]
 }
 
 resource "aws_elasticsearch_domain" "es_local" {
   domain_name           = "es-local"
   elasticsearch_version = "7.10"
-  depends_on            = [aws_cloudwatch_log_stream.example]
+  depends_on = [aws_cloudwatch_log_stream.example]
 }
 
 resource "aws_s3_bucket" "backup" {
-  bucket     = "kinesis-activity-backup-local"
+  bucket = "kinesis-activity-backup-local"
   depends_on = [aws_elasticsearch_domain.es_local]
 }
 
@@ -50,7 +87,7 @@ resource "aws_kinesis_firehose_delivery_stream" "example" {
         type = "Lambda"
         parameters {
           parameter_name  = "LambdaArn"
-          parameter_value = "arn:aws:lambda:us-east-1:000000000000:function:mylambda"
+          parameter_value = "arn:aws:lambda:us-east-1:000000000000:function:transformer"
         }
         parameters {
           parameter_name  = "RoleArn"

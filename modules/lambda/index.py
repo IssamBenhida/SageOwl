@@ -31,6 +31,7 @@ def handler(event, context):
                 # Prepare JSON version from Syslog log data
                 result = {
                     'timestamp': log_event['timestamp'],
+                    'user': 'kali',
                     'message': match.group(1)
                 }
                 transformed_events.append(result)
