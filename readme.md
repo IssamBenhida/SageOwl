@@ -16,7 +16,7 @@
 </p>
 
 
-<h3 align="center">SkyWatch Aws Powered Serverless SIEM</h3>
+<h2 align="center">SageOwl, AWS Powered Serverless SIEM</h2>
 
 ---
 
