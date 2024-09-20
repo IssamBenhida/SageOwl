@@ -15,11 +15,10 @@
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x&logoColor=white" alt="mail">
 </p>
 
-<h2 align="center">SageOwl</h2>
+<h1 align="center">SageOwl</h1>
 
 <h3 align="center">A Powerful, AWS-Powered Serverless SIEM</h3>
 
----
 
 <h4>Effortlessly monitor and protect your on-premises and cloud environments.</h4>
 
