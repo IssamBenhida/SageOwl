@@ -30,9 +30,11 @@
 > :moneybag: Free Testing: Experiment without the expenses.<br>
 > :european_castle: Durable: Built to last, even in the harshest conditions.
 
+<br>
+
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary><h2>Table of Contents</h2></summary>
   <ol>
     <li>
       <a href="#Overview">Overview</a>
