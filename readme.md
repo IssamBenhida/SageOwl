@@ -23,7 +23,7 @@
 
 <br>
 
-                                                :owl: 
+:owl: 
 
 > [!TIP]
 > :zap: **One-Touch Deployment**: Get started in seconds.<br>
