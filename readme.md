@@ -23,9 +23,9 @@
 > Effortlessly monitor and protect your on-premises and cloud environments.
 
 > [!TIP]
-> **Highly Available**: Always on, always ready.
-> **Scalable**: Adapt to your needs without limits.
-> **One-Touch Deployment**: Get started in seconds.
+> **One-Touch Deployment**: Get started in seconds.<br>
+> **Highly Available**: Always on, always ready.<br>
+> **Scalable**: Adapt to your needs without limits.<br>
 > **Cost-Free Local Testing**: Experiment without the expenses.
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
