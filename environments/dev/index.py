@@ -28,11 +28,21 @@ def handler(event, context):
             match = parser.match(message)
 
             if match:
-                # Prepare JSON version from Syslog log data
+                try:
+                    message_data = json.loads(log_event['message'])
+                except json.JSONDecodeError:
+                    # If message cannot be parsed as JSON, log the failure
+                    failure += 1
+                    continue
+
                 result = {
                     'timestamp': log_event['timestamp'],
-                    'user': 'kali',
-                    'message': match.group(1)
+                    'user.agent': message_data['user.agent'],
+                    'http.request.method': message_data.get('http.request.method'),
+                    'http.request.url': message_data.get('http.request.path'),
+                    'http.response.status': message_data.get('http.response.status.code'),
+                    'http.response.body.bytes': message_data.get('http.response.body.bytes'),
+                    'source.ip': message_data['source.ip'],
                 }
                 transformed_events.append(result)
                 success += 1
@@ -49,8 +59,7 @@ def handler(event, context):
                 'result': 'Ok',
                 'data': base64.b64encode(json.dumps({
                     'index': {
-                        '_index': 'your_index_name',
-                        '_id': str(i)
+                        '_log_type': 'web-app'
                     }
                 }).encode('utf-8')).decode('utf-8')
             })

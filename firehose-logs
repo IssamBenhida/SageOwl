@@ -1,1 +1,0 @@
-{"messageType":"DATA_MESSAGE","owner":"000000000000","logGroup":"localstack-log-group","logStream":"local-instance","subscriptionFilters":["kinesis_test"],"logEvents":[{"id":"0","timestamp":1724098738836,"message":"whoami"}]}
