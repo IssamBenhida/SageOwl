@@ -21,7 +21,7 @@
 
 > <h6 align="center">Effortlessly monitor and protect your on-premises and cloud environments.</h6>
 
-> [!TIP]
+
 > :zap: **One-Touch Deployment**: Get started in seconds.<br>
 > :green_circle: **Highly Available**: Always on, always ready.<br>
 > :balance_scale: **Scalable**: Adapt to your needs without limits.<br>
