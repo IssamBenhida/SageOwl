@@ -15,12 +15,12 @@
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x&logoColor=white" alt="mail">
 </p>
 
-<h1 align="center">&nbsp;&nbsp;&nbsp;&nbsp; :owl: SageOwl</h1>
+<h1 align="center">&nbsp;&nbsp;&nbsp; :owl: SageOwl</h1>
 
 <h3 align="center">A Powerful, AWS-Powered Serverless SIEM</h3>
 
 
-> <h6 align="center">Effortlessly monitor and protect your on-premises and cloud environments.</h6>
+> &nbsp;&nbsp;<h6 align="center">Effortlessly monitor and protect your on-premises and cloud environments.</h6>
 
 > [!TIP]
 > :zap: **One-Touch Deployment**: Get started in seconds.<br>
