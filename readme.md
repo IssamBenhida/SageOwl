@@ -20,7 +20,7 @@
 <h3 align="center">A Powerful, AWS-Powered Serverless SIEM</h3>
 
 
-> Effortlessly monitor and protect your on-premises and cloud environments.
+> <h6 align="center">Effortlessly monitor and protect your on-premises and cloud environments.</h6>
 
 > [!TIP]
 > **One-Touch Deployment**: Get started in seconds.<br>
