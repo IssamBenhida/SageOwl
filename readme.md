@@ -20,13 +20,15 @@
 <h3 align="center">A Powerful, AWS-Powered Serverless SIEM</h3>
 
 
-<h4>Effortlessly monitor and protect your on-premises and cloud environments.</h4>
+> Effortlessly monitor and protect your on-premises and cloud environments.
 
-## Features
-- **Highly Available**: Always on, always ready.
-- **Scalable**: Adapt to your needs without limits.
-- **One-Touch Deployment**: Get started in seconds.
-- **Cost-Free Local Testing**: Experiment without the expenses.
+> [!TIP]
+> **Highly Available**: Always on, always ready.
+> **Scalable**: Adapt to your needs without limits.
+> **One-Touch Deployment**: Get started in seconds.
+> **Cost-Free Local Testing**: Experiment without the expenses.
+
+![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
 ### <u>Commands</u>:
 
