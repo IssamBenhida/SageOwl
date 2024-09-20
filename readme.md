@@ -63,7 +63,8 @@
 
 ## Overview
 
-this a nice project.
+@SageOwl is a robust Serverless Security Information and Event Management (SIEM) solution powered by AWS. Designed to seamlessly monitor and protect both on-premises and cloud environments
+
 
 ## Commands
 
