@@ -45,8 +45,8 @@
     <li>
       <a href="#Architecture">Architecture</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#AWS architecture diagram">AWS architecture diagram</a></li>
+        <li><a href="#Development Strategy">Development Strategy</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -69,7 +69,11 @@ SageOwl is a robust Serverless Security Information and Event Management (SIEM) 
 
 ## Architecture
 
+### AWS architecture diagram
 
+### Development Strategy
+
+![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 ## Commands
 
 Prerequisites:
