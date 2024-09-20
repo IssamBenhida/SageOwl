@@ -15,7 +15,7 @@
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x&logoColor=white" alt="mail">
 </p>
 
-<h1 align="center">&nbsp;&nbsp;&nbsp;&nbsp;SageOwl</h1>
+<h1 align="center">&nbsp;&nbsp;&nbsp;&nbsp; :owl: SageOwl</h1>
 
 <h3 align="center">A Powerful, AWS-Powered Serverless SIEM</h3>
 
@@ -26,7 +26,7 @@
 > :zap: **One-Touch Deployment**: Get started in seconds.<br>
 > **Highly Available**: Always on, always ready.<br>
 > **Scalable**: Adapt to your needs without limits.<br>
-> **Cost-Free Local Testing**: Experiment without the expenses.
+> **Free Testing**: Experiment without the expenses.
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
