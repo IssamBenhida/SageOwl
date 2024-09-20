@@ -15,7 +15,7 @@
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x&logoColor=white" alt="mail">
 </p>
 
-<h1 align="center">&nbsp;&nbsp;&nbsp;SageOwl</h1>
+<h1 align="center">&nbsp;&nbsp;&nbsp; :owl: SageOwl</h1>
 
 <h3 align="center">A Powerful, AWS-Powered Serverless SIEM</h3>
 
@@ -23,9 +23,10 @@
 
 <br>
 
-:owl: 
-
 > [!TIP]
+
+<br>
+
 > :zap: **One-Touch Deployment**: Get started in seconds.<br>
 > :green_circle: **Highly Available**: Always on, always ready.<br>
 > :balance_scale: **Scalable**: Adapt to your needs without limits.<br>
