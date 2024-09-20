@@ -23,7 +23,7 @@
 
 > [!TIP]
 > :zap: **One-Touch Deployment**: Get started in seconds.<br>
-> **Highly Available**: Always on, always ready.<br>
+> :green_heart: **Highly Available**: Always on, always ready.<br>
 > :balance_scale: **Scalable**: Adapt to your needs without limits.<br>
 > :moneybag: **Free Testing**: Experiment without the expenses.
 
