@@ -22,7 +22,6 @@
 > <h6 align="center">Effortlessly monitor and protect your on-premises and cloud environments.</h6>
 
 <br>
-<br>
 
 > [!TIP]
 > :zap: **One-Touch Deployment**: Get started in seconds.<br>
