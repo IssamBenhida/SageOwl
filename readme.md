@@ -24,7 +24,7 @@
 <br>
 
 > [!TIP]
-> @
+> *Features*
 > :zap: **One-Touch Deployment**: Get started in seconds.<br>
 > :green_circle: **Highly Available**: Always on, always ready.<br>
 > :balance_scale: **Scalable**: Adapt to your needs without limits.<br>
