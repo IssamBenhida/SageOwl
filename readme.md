@@ -12,8 +12,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin">
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/gmail-red?style=for-the-badge&logo=Gmail&logoColor=white" alt="mail">
-<a target="_blank" href=""></a><img src="https://img.shields.io/badge/Twitter-gray?style=for-the-badge&logo=x&logoColor=white" alt="mail">
+<a target="_blank" href=""></a><img src="https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x&logoColor=white" alt="mail">
 </p>
+
+<h1 style="color: blue; font-size: 30px;">Hello, World!</h1>
 
 <style>
   h1#my-heading {
@@ -43,6 +45,7 @@
     font-weight: 500;
   }
 </style>
+
 <h1 id="my-heading"><span id="skywatch-span">SkyWatch</span>: AWS-Powered Serverless SIEM</h1>
 <h1 id="sub">Effortlessly monitor and protect your on-premises and cloud environments.</h1>
 
