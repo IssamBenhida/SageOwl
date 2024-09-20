@@ -15,9 +15,36 @@
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/Twitter-gray?style=for-the-badge&logo=x&logoColor=white" alt="mail">
 </p>
 
-# SkyWatch: Your AWS-Powered Serverless SIEM
+<style>
+  h1#my-heading {
+    font-family: SpaceGrotesk-Light, serif;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: 500;
+    font-size: 33px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 
-Effortlessly monitor and protect your cloud and on-premises environments.
+  span#skywatch-span {
+    font-family: SpaceGrotesk-Light, serif;
+    color: #ea7015;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 40px;
+  }
+    
+  h1#sub{
+    font-family: SpaceGrotesk-Light,serif;
+	color:#fff;
+    text-align: center;
+	font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+  }
+</style>
+<h1 id="my-heading"><span id="skywatch-span">SkyWatch</span>: AWS-Powered Serverless SIEM</h1>
+<h1 id="sub">Effortlessly monitor and protect your on-premises and cloud environments.</h1>
 
 ## Features
 
@@ -26,66 +53,49 @@ Effortlessly monitor and protect your cloud and on-premises environments.
 - **One-Touch Deployment**: Get started in seconds.
 - **Cost-Free Local Testing**: Experiment without the expenses.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### <u>Commands</u>:
 
-
 Prerequisites:
+
 ```bash
 pip install awscli-local
 pip install terraform-local
 ```
 
 Creating a lambda function:
+
 ```bash
 awslocal iam create-role --role-name LambdaSESRole --assume-role-policy-document file://trust-policy.json
 ```
+
 ```bash
 zip index.zip index.py
 ```
+
 ```bash
 awslocal lambda create-function --function-name mylambda --zip-file fileb://index.zip --handler index.handler --runtime python3.7 --role arn:aws:iam::000000000000:role/LambdaSESRole
 ```
+
 Invoking a lambda function:
+
 ```bash
 awslocal lambda invoke --function-name mylambda output.txt
 ``` 
 
 installing cloudwatch agent service
+
 ```bash
 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m onPremise -c file:cwa-config.json.j2 -s
 ```
+
 start cloudwatch agent
+
 ```bash
 service amazon-cloudwatch-agent start 
 ```
+
 provoke it
+
 ```bash
 echo "Test log entry" >> /var/log/syslog
 ```
