@@ -1,8 +1,6 @@
 
 
-<h1 align="center">
-    <a href="https://imgur.com/txnONHi"><img src="https://i.imgur.com/txnONHi.gif" title="source: imgur.com"  alt="SkyWatch"/></a>
-</h1>
+
 <p align="center">
 <a target="_blank" href="https://search.maven.org/artifact/com.webencyclop.core/mftool-java"><img src="https://img.shields.io/maven-central/v/com.webencyclop.core/mftool-java.svg?label=Maven%20Central"/></a> 
 <a target="_blank" href="https://www.codacy.com/gh/ankitwasankar/mftool-java/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ankitwasankar/mftool-java&utm_campaign=Badge_Coverage"><img src="https://app.codacy.com/project/badge/Coverage/0054db87ea0f426599c3a30b39291388" /></a>
@@ -15,7 +13,7 @@
   MF TOOL - JAVA is a Java library developed to ease the process of working with Indian Mutual Funds. It's powerful, actively maintained and easy to use.
 </p>
 
-
+![alt text](https://github.com/IssamBenhida/repo/blob/main/cloudwatch.gif?raw=true)
 # SkyWatch: Your AWS-Powered Serverless SIEM
 
 Effortlessly monitor and protect your cloud and on-premises environments.
