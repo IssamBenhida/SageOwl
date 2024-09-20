@@ -15,42 +15,14 @@
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x&logoColor=white" alt="mail">
 </p>
 
-<h1 style="color: blue; font-size: 30px;">Hello, World!</h1>
 
-<style>
-  h1#my-heading {
-    font-family: SpaceGrotesk-Light, serif;
-    color: #fff;
-    line-height: 1.2;
-    font-weight: 500;
-    font-size: 33px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+<h3 align="center">SkyWatch Aws Powered Serverless SIEM</h3>
 
-  span#skywatch-span {
-    font-family: SpaceGrotesk-Light, serif;
-    color: #ea7015;
-    line-height: 1;
-    font-weight: 500;
-    font-size: 40px;
-  }
-    
-  h1#sub{
-    font-family: SpaceGrotesk-Light,serif;
-	color:#fff;
-    text-align: center;
-	font-size: 16px;
-    line-height: 1;
-    font-weight: 500;
-  }
-</style>
+---
 
-<h1 id="my-heading"><span id="skywatch-span">SkyWatch</span>: AWS-Powered Serverless SIEM</h1>
-<h1 id="sub">Effortlessly monitor and protect your on-premises and cloud environments.</h1>
+<h4>Effortlessly monitor and protect your on-premises and cloud environments.</h4>
 
 ## Features
-
 - **Highly Available**: Always on, always ready.
 - **Scalable**: Adapt to your needs without limits.
 - **One-Touch Deployment**: Get started in seconds.
