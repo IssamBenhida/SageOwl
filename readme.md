@@ -8,6 +8,8 @@
 <a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/repo/blob/main/cloudwatch.gif?raw=true" alt="">
 </p>
 
+<h2 align="center">SageOwl</h2>
+
 <p align="center">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin">
@@ -16,7 +18,7 @@
 </p>
 
 
-<h2 align="center">SageOwl, AWS Powered Serverless SIEM</h2>
+<h3 align="center">A Powerful, AWS-Powered Serverless SIEM</h3>
 
 ---
 
