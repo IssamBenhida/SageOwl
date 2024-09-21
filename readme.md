@@ -67,11 +67,12 @@ SageOwl is a robust Serverless Security Information and Event Management (SIEM) 
 
 + **User Experience**: User-friendly interface for efficient monitoring, alerting, and incident response
 + **Log Types**: System, web application, network, security, and aws cloud services logs.
-+ **Security and Compliance**: Adherence to GDPR, HIPAA, and other industry standards
-+ **Analytics Capabilities**: Anomaly detection, event correlation, threat identification
-+ **Data Enrichment**: Contextual data enrichment for enhanced analysis
++ **Compliance**: Adherence to GDPR, HIPAA, and other industry standards
++ **Analytics**: Anomaly detection, event correlation, threat identification
++ **Enrichment**: Contextual data enrichment for enhanced analysis
 + **Scalability**: Seamless scaling to accommodate increasing workloads
 + **Integration:** Integration with existing security tools
+
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
 ## Architecture
