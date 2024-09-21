@@ -71,8 +71,15 @@ SageOwl is a robust Serverless Security Information and Event Management (SIEM) 
 
 ### aws architecture diagram
 
+<br>
+
+<p align="center">
+<a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/repo/blob/main/arch.drawio.svg?raw=true" alt="">
+</p>
+
 ### development strategy
 
+<br>
 
 <p align="center">
 <a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/repo/blob/main/dev.svg?raw=true" alt="">
