@@ -23,11 +23,11 @@
 
 <br>
 
-+ :zap: One-Touch Deployment: Get started in seconds.<br>
-+ :green_circle: Highly Available: Always on, always ready.<br>
++ :european_castle: Durable: Built to last, even in the harshest conditions.
 + :balance_scale: Scalable: Adapt to your needs without limits.<br>
 + :moneybag: Free Testing: Experiment without the expenses.<br>
-+ :european_castle: Durable: Built to last, even in the harshest conditions.
++ :green_circle: Highly Available: Always on, always ready.<br>
++ :zap: One-Touch Deployment: Get started in seconds.<br>
 
 <br>
 
