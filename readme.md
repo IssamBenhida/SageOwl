@@ -65,13 +65,14 @@
 
 SageOwl is a robust Serverless Security Information and Event Management (SIEM) solution powered by AWS. Designed to seamlessly monitor and protect both on-premises and cloud environments.
 
+
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
 ## Architecture
 
-### aws architecture diagram
+This project aims to develop a scalable, serverless SIEM solution on AWS. By utilizing CloudWatch Agents, Kinesis Firehose, Lambda, SNS, and OpenSearch, we'll create a robust platform for real-time log analysis and threat detection. A comprehensive backup and disaster recovery plan will ensure data integrity and resilience.
 
-<br>
+#### AWS Architecture Diagram
 
 <p align="center">
 <a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/repo/blob/main/arch.drawio.svg?raw=true" alt="">
