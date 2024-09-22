@@ -67,14 +67,14 @@
 > [!IMPORTANT]
 > This project is designed to be flexible and customizable. Feel free to modify the architecture or code to suit your specific requirements. If you appreciate this work, please leave a star.
 
-### Features
+### Features:
 
 + **User Experience**: User-friendly interface for efficient monitoring, alerting, and incident response
 + **Log Types**: System, web application, network, security, and aws cloud services logs.
 + **Compliance**: Adherence to GDPR, HIPAA, and other industry standards
++ **Scalability**: Seamless scaling to accommodate increasing workloads
 + **Analytics**: Anomaly detection, event correlation, threat identification
 + **Enrichment**: Contextual data enrichment for enhanced analysis
-+ **Scalability**: Seamless scaling to accommodate increasing workloads
 + **Integration:** Integration with existing security tools
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
