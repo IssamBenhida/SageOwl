@@ -38,17 +38,16 @@
     <li>
       <a href="#Overview">Overview</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#Features">Features</a></li>
       </ul>
     </li>
     <li>
       <a href="#Architecture">Architecture</a>
       <ul>
-        <li><a href="#AWS architecture diagram">AWS architecture diagram</a></li>
-        <li><a href="#Development Strategy">Development Strategy</a></li>
+        <li><a href="#AWS Architecture Diagram">AWS architecture diagram</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#Environments">Environments</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -89,7 +88,9 @@ This project aims to develop a scalable, serverless SIEM solution on AWS. By uti
 <a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/repo/blob/main/arch.drawio.svg?raw=true" alt="">
 </p>
 
-### development strategy
+![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
+
+## Environments
 
 <br>
 
