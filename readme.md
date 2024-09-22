@@ -67,7 +67,7 @@
 > [!IMPORTANT]
 > This project is designed to be flexible and customizable. Feel free to modify the architecture or code to suit your specific requirements. If you appreciate this work, please leave a star.
 
-#### Features
+### Features
 
 + **User Experience**: User-friendly interface for efficient monitoring, alerting, and incident response
 + **Log Types**: System, web application, network, security, and aws cloud services logs.
