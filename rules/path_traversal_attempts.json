@@ -1,0 +1,33 @@
+{
+  "title": "Path Traversal Attempts",
+  "id": "123e4567-e89b-12d3-a456-426614174000",
+  "description": "Detects Path Traversal Attempts.",
+  "status": "experimental",
+  "author": "Administrator",
+  "date": "2024/09/26",
+  "modified": "2024/09/26",
+  "references": [
+    "https://example.com/unauthorized-access-report"
+  ],
+  "tags": [
+    "attack.sensitive_data",
+    "attack.authentication"
+  ],
+  "logsource": {
+    "product": "apache_access",
+    "service": "apache"
+  },
+  "detection": {
+    "selection1": {
+      "request_path": "*../*"
+    },
+    "selection2": {
+      "request_path": "*..../*"
+    },
+    "condition": "selection1 or selection2"
+  },
+  "level": "medium",
+  "falsepositives": [
+    "web crawlers."
+  ]
+}

@@ -131,7 +131,7 @@ awslocal lambda invoke --function-name mylambda output.txt
 installing cloudwatch agent service
 
 ```bash
-/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m onPremise -c file:cwa-config.json.j2 -s
+/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m onPremise -c file:cloudwatch_config.json.j2 -s
 ```
 
 start cloudwatch agent

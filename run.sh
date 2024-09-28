@@ -1,19 +1,21 @@
 echo "Running ..."
 
-systemctl stop nginx && systemctl stop logstash
+truncate -s 0 /var/log/sageowl/main.log
+truncate -s 0 /var/log/nginx/access.log
+
+systemctl stop logstash
 systemctl stop amazon-cloudwatch-agent
 
 docker-compose up -d && tflocal apply --auto-approve && rm index.zip
 
-systemctl start nginx && systemctl start logstash
-systemctl start amazon-cloudwatch-agent
+ansible-playbook -i ansible/inventory.ini ansible/ansible.yml
 
-cd ../../dashboard && docker-compose up -d && cd environments/dev || exit
 
-# /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.d/file_amazon-cloudwatch-agent.json
+# check for errors
+# rsyslogd -f /etc/rsyslog.conf -N1
+
 # /etc/logstash/conf.d/logstash.conf
 
-# ansible-playbook -i inventory.ini ansible.yml -vv
 # timestamp=$(($(date +'%s * 1000 + %-N / 1000000')))
 # awslocal logs put-log-events --log-group-name localstack-log-group --log-stream-name local-instance --log-events "[{\"timestamp\": ${timestamp} , \"message\": \"hello from cloudwatch\"}]"
 

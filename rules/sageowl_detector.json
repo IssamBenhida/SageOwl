@@ -1,0 +1,65 @@
+{
+  "enabled": true,
+  "schedule": {
+    "period": {
+      "interval": 1,
+      "unit": "MINUTES"
+    }
+  },
+  "detector_type": "apache_access",
+  "type": "detector",
+  "inputs": [
+    {
+      "detector_input": {
+        "description": "apache access detector for security analytics",
+        "custom_rules": [
+          {
+            "id" : "CQBhNJIBbwhHGg7A7S0V"
+          }
+        ],
+        "indices": [
+          "sageowl_index"
+        ],
+        "pre_packaged_rules": [
+          {
+            "id": "e9a2b582-3f6a-48ac-b4a1-6849cdc50b3c"
+          }
+        ]
+      }
+    }
+  ],
+  "triggers": [
+    {
+      "ids": [],
+      "types": [],
+      "tags": [
+        "attack.defense_evasion"
+      ],
+      "severity": "1",
+      "actions": [
+        {
+          "id": "",
+          "destination_id": "Triggered alert condition: Trigger 1 - Severity: 1 (Highest) - Threat detector: owl_trigger",
+          "subject_template": {
+            "source": "Trigger: ",
+            "lang": "mustache"
+          },
+          "name": "hello_world",
+          "throttle_enabled": false,
+          "message_template": {
+            "source": "Triggered alert condition: Trigger 1\nSeverity: 1 (Highest)\nThreat detector: \nDescription: apache access detector for security analytics\nDetector data sources:\n\tsageowl_index",
+            "lang": "mustache"
+          },
+          "throttle": {
+            "unit": "MINUTES",
+            "value": 10
+          }
+        }
+      ],
+      "id": "A8IqMJIBWuYkhrspDNqf",
+      "sev_levels": [],
+      "name": "owl_trigger"
+    }
+  ],
+  "name": "sageowl"
+}

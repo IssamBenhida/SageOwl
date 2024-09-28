@@ -53,6 +53,16 @@ variable "ebs_options" {
   }
 }
 
+variable "timeouts" {
+  description = "Opensearch domain deployment timeouts"
+  type        = any
+  default = {
+    create = null
+    update = null
+    delete = null
+  }
+}
+
 variable "tags" {
   description = "A map of tags to assign to the OpenSearch domain."
   type = map(string)

@@ -1,7 +1,7 @@
 /.idea
 /.terraform
-/environments/dev/.terraform
-/environments/dev/.terraform.lock.hcl
-/environments/dev/index.zip
+/environments/development/.terraform
+/environments/development/.terraform.lock.hcl
+/environments/development/index.zip
 .terraform.lock.hcl
 

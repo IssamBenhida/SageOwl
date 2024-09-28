@@ -1,0 +1,26 @@
+input {
+  file {
+     path => "{{ input_log_file }}"
+  }
+}
+
+filter {
+  dissect {
+    mapping => {
+      "message" => '%{client_ip} - - [%{timestamp}] "%{http_method} %{request} HTTP/%{http_version}" %{response_code} %{bytes} "%{referrer}" "%{user_agent}"'
+    }
+  }
+  date {
+    match => [ "timestamp", "dd/MMM/yyyy:HH:mm:ss Z" ]
+    target => "@timestamp"
+  }
+  mutate {
+    remove_field => ["host", "@timestamp", "@version", "event", "message", "log"]
+  }
+}
+
+output {
+  file {
+    path => "{{ output_log_file }}"
+  }
+}

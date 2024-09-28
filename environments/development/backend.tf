@@ -11,9 +11,9 @@
 
 terraform {
   backend "s3" {
-    dynamodb_table = "state-lock-table"
-    bucket         = "state-lock-bucket"
-    key            = "terraform.state"
+    dynamodb_table = "terraform-state-lock-table"
+    bucket         = "terraform-state-lock-bucket"
+    key            = "development/terraform.state"
     region         = "us-east-1"
   }
 }

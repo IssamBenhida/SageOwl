@@ -12,11 +12,11 @@ services:
     dns:
       - 10.0.2.20
     networks:
-      - sendnow_ls
+      - sageowl_ls
     tty: true
     stdin_open: true
 
 
 networks:
-  sendnow_ls:
+  sageowl_ls:
     external: true

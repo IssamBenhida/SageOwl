@@ -1,9 +1,11 @@
+from datetime import datetime
+from io import BytesIO
 import base64
 import gzip
 import json
 import re
-from io import BytesIO
 
+# log parser for cloudwatch logs
 parser = re.compile(r'^(.*)$')
 
 
@@ -13,7 +15,7 @@ def handler(event, context):
     output = []
 
     for record in event['records']:
-        # Decode and decompress data
+        # Decode and decompress records data
         compressed_payload = base64.b64decode(record['data'])
         with gzip.GzipFile(fileobj=BytesIO(compressed_payload)) as f:
             data = f.read().decode('utf-8')
@@ -23,11 +25,11 @@ def handler(event, context):
         log_events = log_data['logEvents']
 
         transformed_events = []
+
         for log_event in log_events:
             message = log_event['message']
-            match = parser.match(message)
 
-            if match:
+            if parser.match(message):
                 try:
                     message_data = json.loads(log_event['message'])
                 except json.JSONDecodeError:
@@ -36,13 +38,15 @@ def handler(event, context):
                     continue
 
                 result = {
-                    'timestamp': log_event['timestamp'],
-                    'user.agent': message_data['user.agent'],
-                    'http.request.method': message_data.get('http.request.method'),
-                    'http.request.url': message_data.get('http.request.path'),
-                    'http.response.status': message_data.get('http.response.status.code'),
-                    'http.response.body.bytes': message_data.get('http.response.body.bytes'),
-                    'source.ip': message_data['source.ip'],
+                    'timestamp': datetime.strptime(message_data.get("timestamp"), '%d/%b/%Y:%H:%M:%S %z').isoformat(),
+                    'http_version': message_data.get('http_version'),
+                    'user_agent': message_data.get('user_agent'),
+                    'request_path': message_data.get('request'),
+                    'client_ip': message_data.get('client_ip'),
+                    'bytes': int(message_data.get('bytes')),
+                    'http_method': message_data.get('http_method'),
+                    'referrer': message_data.get('referrer'),
+                    'response_code': int(message_data.get('response_code'))
                 }
                 transformed_events.append(result)
                 success += 1
@@ -54,15 +58,13 @@ def handler(event, context):
 
         # Append document to output in Elasticsearch bulk API format
         for i, event in enumerate(transformed_events):
-            output.append({
-                'recordId': str(i),
-                'result': 'Ok',
-                'data': base64.b64encode(json.dumps({
-                    'index': {
-                        '_log_type': 'web-app'
-                    }
-                }).encode('utf-8')).decode('utf-8')
-            })
+            # output.append({
+            #     'recordId': str(i),
+            #     'result': 'Ok',
+            #     'data': base64.b64encode(json.dumps({
+            #         'index': log_events[i]['id']
+            #     }).encode('utf-8')).decode('utf-8')
+            # })
             output.append({
                 'recordId': str(i),
                 'result': 'Ok',

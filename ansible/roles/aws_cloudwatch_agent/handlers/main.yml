@@ -1,0 +1,8 @@
+---
+# handlers file for aws_cloudwatch_agent
+- name: restart amazon cloudWatch agent
+  systemd:
+    name: amazon-cloudwatch-agent
+    state: restarted
+    enabled: yes
+

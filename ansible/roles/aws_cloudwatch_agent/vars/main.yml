@@ -1,0 +1,6 @@
+---
+# vars file for aws_cloudwatch_agent
+
+application_log_file_path: "/home/kali/PycharmProjects/SageOwl/logs/main.log"
+log_group_name: "localstack-log-group"
+log_stream_name: "local-instance"

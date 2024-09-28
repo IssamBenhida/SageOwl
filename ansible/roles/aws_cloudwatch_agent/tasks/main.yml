@@ -1,0 +1,38 @@
+---
+# tasks file for aws_cloudwatch_agent
+
+- block:
+    - name: check if cloudwatch agent is already installed
+      service_facts:
+
+    - block:
+        - name: check if cloudwatch agent .deb package exists
+          stat:
+            path: "{{ package_dest }}"
+          register: agent_downloaded
+
+        - name: download cloudwatch agent .deb package
+          get_url:
+            url: "{{ download_url }}"
+            dest: "{{ package_dest }}"
+          when: not agent_downloaded.stat.exists
+
+        - name: install cloudwatch agent
+          apt:
+            deb: "{{ package_dest }}"
+            state: present
+
+      when: "'amazon-cloudwatch-agent.service' not in services"
+
+    - name: upload cloudwatch agent configuration file
+      template:
+        src: localstack_config.json.j2
+        dest: "{{ config_path }}"
+      register: agent_uploaded
+
+    - name: deploy cloudWatch agent
+      command: "{{ agent_path }} -a fetch-config -m onPremise -c file:{{ config_path }} -s"
+      notify: restart amazon cloudWatch agent
+      when: agent_uploaded.changed
+
+  when: ansible_os_family in ["Debian", "Ubuntu"]
