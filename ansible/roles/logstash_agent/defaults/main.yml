@@ -1,0 +1,6 @@
+---
+# defaults file for logstash_agent
+logstash_repo: "deb https://artifacts.elastic.co/packages/7.x/apt stable main"
+public_key_url: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+logstash_config_path: "/etc/logstash/conf.d/logstash.conf"
+logstash_package: "logstash"

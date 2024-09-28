@@ -1,0 +1,74 @@
+---
+# tasks file for logstash_agent
+
+- block:
+    - name: check if logstash is already installed
+      service_facts:
+
+    - block:
+        - name: install apt-transport-https
+          apt:
+            name: apt-transport-https
+            state: present
+
+        - name: download and install the public signing key
+          apt_key:
+            url: "{{ public_key_url }}"
+            state: present
+
+        - name: add the elastic apt repository
+          apt_repository:
+            repo: "{{ logstash_repo }}"
+            state: present
+
+        - name: update apt cache
+          apt:
+            update_cache: yes
+
+        - name: install logstash service
+          apt:
+            name: "logstash"
+            state: present
+
+      when: "'logstash.service' in services"
+
+    - name: upload logstash configuration file
+      template:
+        src: logstash.conf.j2
+        dest: "{{ logstash_config_path }}"
+
+    - name: check if input file exists
+      stat:
+        path: "{{ input_log_file }}"
+      register: file_stat
+
+    - name: ensure that input file exists
+      fail:
+        msg: "The file {{ input_log_file }} does not exist."
+      when: not file_stat.stat.exists
+
+    - name: ensure that input file is readable
+      file:
+        path: "{{ input_log_file }}"
+        group: logstash
+        mode: '0640'
+
+    - name: create output file directory
+      file:
+        path: "{{ output_log_file | dirname }}"
+        state: directory
+        mode: '0755'
+
+    - name: create output file
+      file:
+        path: "{{ output_log_file }}"
+        state: touch
+
+    - name: change output file ownership to logstash
+      file:
+        path: "{{ output_log_file }}"
+        owner: logstash
+        group: logstash
+      notify: restart logstash service
+
+  when: ansible_os_family in ["Debian", "Ubuntu"]
