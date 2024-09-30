@@ -4,7 +4,7 @@
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/HashiCorp%20Terraform-v5.1.2%20-gray?style=flat&logo=terraform&logoColor=white&labelColor=purple" alt="shield">
 </p>
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image00.gif?raw=true" height="65%" width="65%" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image00.gif?raw=true" height="60%" width="60%" alt="">
 </p>
 <p align="center">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
