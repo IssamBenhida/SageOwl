@@ -36,7 +36,7 @@
     <li>
       <a href="#Architecture">Architecture</a>
       <ul>
-        <li><a href="####AWS Architecture Diagram">AWS architecture diagram</a></li>
+        <li><a href="#aws-architecture-diagram">AWS architecture diagram</a></li>
       </ul>
       <ul>
         <li><a href="####Disaster Recovery Plan">AWS architecture diagram</a></li>
