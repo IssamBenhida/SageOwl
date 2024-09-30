@@ -83,7 +83,7 @@ This project focuses on building a scalable, serverless SIEM solution on AWS, le
 The platform is designed to provide real-time log analysis, threat detection, and high availability to ensure a robust and efficient security monitoring system.
 
 #### Disaster Recovery Plan
-sage owl project employs a cost-effective backup and restore strategy as part of its disaster recovery plan.
+sage owl project employs a cost-effective **backup and restore** strategy as part of its disaster recovery plan.
 
 <br>
 
