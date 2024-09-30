@@ -116,6 +116,14 @@ In the development environment, we leverage <a href="https://www.localstack.clou
 <a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/repo/blob/main/dev.svg?raw=true" alt="">
 </p>
 
+It is also possible to ensure the smooth integration and maintenance of local AWS services by using tflocal for Terraform resource deployment and awslocal for LocalStack interaction.
+
+<br>
+
+<p align="center">
+<a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/repo/blob/main/image01.png?raw=true" alt="">
+</p>
+
 #### Staging
 
 #### Production
