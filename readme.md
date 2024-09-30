@@ -23,49 +23,6 @@
 
 <br>
 
-<table>
-  <tr>
-    <th style="text-align:center">Feature</th>
-    <th style="text-align:center">Description</th>
-  </tr>
-  <tr>
-    <td style="text-align:center">🏰 Durable</td>
-    <td style="text-align:center">Built to last, even in the harshest conditions.</td>
-  </tr>
-  <tr>
-    <td style="text-align:center">⚡ One-Touch Deployment</td>
-    <td style="text-align:center">Get started in seconds.</td>
-  </tr>
-  <tr>
-    <td style="text-align:center">💰 Free Testing</td>
-    <td style="text-align:center">Experiment without the expenses.</td>
-  </tr>
-  <tr>
-    <td style="text-align:center">⚖️ Scalable</td>
-    <td style="text-align:center">Adapt to your needs without limits.</td>
-  </tr>
-  <tr>
-    <td style="text-align:center">🟢 Highly Available</td>
-    <td style="text-align:center">Always on, always ready.</td>
-  </tr>
-</table>
-
-| Feature                | Description                                     |
-|------------------------|-------------------------------------------------|
-| 🏰 Durable             | Built to last, even in the harshest conditions. |
-| ⚡ One-Touch Deployment | Get started in seconds.                         |
-| 💰 Free Testing        | Experiment without the expenses.                |
-| ⚖️ Scalable            | Adapt to your needs without limits.             |
-| 🟢 Highly Available    | Always on, always ready.                        |
-
-+ :european_castle: Durable: Built to last, even in the harshest conditions.
-+ :zap: One-Touch Deployment: Get started in seconds.<br>
-+ :moneybag: Free Testing: Experiment without the expenses.<br>
-+ :balance_scale: Scalable: Adapt to your needs without limits.<br>
-+ :green_circle: Highly Available: Always on, always ready.<br>
-
-<br>
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary><h2>Table of Contents</h2></summary>
@@ -102,6 +59,14 @@
 > This project is designed to be flexible and customizable. Feel free to modify the architecture or code to suit your specific requirements. If you appreciate this work, please leave a star.
 
 ### Features:
+
+| Feature                | Description                                     |
+|------------------------|-------------------------------------------------|
+| 🏰 Durable             | Built to last, even in the harshest conditions. |
+| ⚡ One-Touch Deployment | Get started in seconds.                         |
+| 💰 Free Testing        | Experiment without the expenses.                |
+| ⚖️ Scalable            | Adapt to your needs without limits.             |
+| 🟢 Highly Available    | Always on, always ready.                        |
 
 + **User Experience**: User-friendly interface for efficient monitoring, alerting, and incident response
 + **Log Types**: System, web application, network, security, and aws cloud services logs.
