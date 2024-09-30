@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/repo/blob/main/cloudwatch.gif?raw=true" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image00.gif?raw=true" alt="">
 </p>
 
 <p align="center">
