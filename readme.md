@@ -64,23 +64,25 @@ The features of this project are numerous, including user-friendly monitoring, a
 
 | Feature               | Description                                                                  |
 |-----------------------|------------------------------------------------------------------------------|
-| 🏰 Durable            | Built to last through harsh conditions, heavy workloads, and long-term use.   |
 | ⚡ One-Touch Deployment| Deploy instantly with minimal effort, no complex setup, and quick start time. |
+| 🟢 Highly Available   | Always operational, offering continuous uptime, reliability, and readiness.   |
 | 💰 Free Testing       | Experiment freely with no upfront costs, allowing risk-free trial and error.  |
 | ⚖️ Scalable           | Seamlessly grow and expand without limitations, handling increasing demands.  |
-| 🟢 Highly Available   | Always operational, offering continuous uptime, reliability, and readiness.   |
+| 🏰 Durable            | Built to last through harsh conditions, heavy workloads, and long-term use.   |
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
 ## Architecture
 
-This project aims to develop a scalable, serverless SIEM solution on AWS. By utilizing CloudWatch Agents, Kinesis Firehose, Lambda, SNS, and OpenSearch, we'll create a robust platform for real-time log analysis and threat detection. A comprehensive backup and disaster recovery plan will ensure data integrity and resilience.
+This project focuses on building a scalable, serverless SIEM solution on AWS, leveraging CloudWatch Agents, Kinesis Firehose, Lambda, SNS, OpenSearch, and Elastic Load Balancing. 
 
 #### AWS Architecture Diagram
 
 <p align="center">
 <a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/repo/blob/main/arch.drawio.svg?raw=true" alt="">
 </p>
+
+The platform is designed to provide real-time log analysis, threat detection, and high availability to ensure a robust and efficient security monitoring system.
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
