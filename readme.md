@@ -84,6 +84,8 @@ The platform is designed to provide real-time log analysis, threat detection, an
 
 #### Disaster Recovery Plan
 
+<br>
+
 <p align="center">
 <a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/disaster.png?raw=true" alt="">
 </p>
