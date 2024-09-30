@@ -118,7 +118,7 @@ In the development environment, we leverage <a href="https://www.localstack.clou
 <br>
 
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/sageowl/blob/main/assets/images/image01.svg?raw=true" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/sageowl/blob/main/assets/images/image01.svg?raw=true" height="95%" width="95%" alt="">
 </p>
 
 <br>
