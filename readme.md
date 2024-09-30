@@ -15,7 +15,7 @@
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x&logoColor=white" alt="mail">
 </p>
 
-<h1 align="center">&nbsp;&nbsp;&nbsp; :owl: SageOwl</h1>
+<h1 align="center">&nbsp;&nbsp;&nbsp; :cloud: SageOwl</h1>
 
 <h3 align="center">&nbsp;&nbsp;&nbsp;A Powerful, AWS-Powered Serverless SIEM</h3>
 
@@ -60,7 +60,7 @@
 
 ### Features:
 
-Key features of the project:
+The features of this project are numerous, including user-friendly monitoring, alerting, and incident response, with support for various log types and industry compliance. It also offers advanced analytics, data enrichment, and integration with security tools.
 
 | Feature               | Description                                                                  |
 |-----------------------|------------------------------------------------------------------------------|
@@ -69,9 +69,6 @@ Key features of the project:
 | 💰 Free Testing       | Experiment freely with no upfront costs, allowing risk-free trial and error.  |
 | ⚖️ Scalable           | Seamlessly grow and expand without limitations, handling increasing demands.  |
 | 🟢 Highly Available   | Always operational, offering continuous uptime, reliability, and readiness.   |
-
-
-User-friendly monitoring, alerting, and incident response, with support for various log types and industry compliance. Offers advanced analytics, data enrichment, and integration with security tools.
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
