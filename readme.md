@@ -39,7 +39,7 @@
         <li><a href="#aws-architecture-diagram">AWS architecture diagram</a></li>
       </ul>
       <ul>
-        <li><a href="####Disaster Recovery Plan">AWS architecture diagram</a></li>
+        <li><a href="#disaster-recovery-plan">Disaster Recovery Plan</a></li>
       </ul>
     </li>
     <li><a href="#Environments">Environments</a></li>
