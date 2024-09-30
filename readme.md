@@ -86,9 +86,9 @@ The platform is designed to provide real-time log analysis, threat detection, an
 Sage owl project employs a cost-effective **backup and restore** strategy as part of its disaster recovery plan.
 
 + **Recovery Point Objective (RPO)**:
-This project established clear recovery objectives to ensure robust data protection and quick recovery from potential disruptions. The RPO is calculated between 10 to 15 minutes allowing for minimal data loss in the event of a failure.
+This project established clear recovery objectives to ensure robust data protection and quick recovery from potential disruptions. The RPO is calculated between 10 and 15 minutes allowing for minimal data loss in the event of a failure.
 + **Recovery Time Objective (RTO)**:
-Simultaneously, the RTO is calculated between 15 to 30 minutes, ensuring that the system can be restored and operational within this timeframe. 
+Simultaneously, the RTO is calculated between 15 and 30 minutes, ensuring that the system can be restored and operational within this timeframe. 
 
 <br>
 
