@@ -3,11 +3,9 @@
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/ansible%20playbook-v2.17.1%20-gray?style=flat&logo=ansible&logoColor=black&labelColor=white" alt="shield">
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/HashiCorp%20Terraform-v5.1.2%20-gray?style=flat&logo=terraform&logoColor=white&labelColor=purple" alt="shield">
 </p>
-
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image00.gif?raw=true" height="80%" width="80%" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image00.gif?raw=true" height="90%" width="90%" alt="">
 </p>
-
 <p align="center">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin">
