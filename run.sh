@@ -3,12 +3,11 @@ echo "Running ..."
 truncate -s 0 /var/log/sageowl/main.log
 truncate -s 0 /var/log/nginx/access.log
 
-systemctl stop logstash
 systemctl stop amazon-cloudwatch-agent
 
 docker-compose up -d && tflocal apply --auto-approve && rm index.zip
 
-ansible-playbook -i ansible/inventory.ini ansible/ansible.yml
+# ansible-playbook -i ../../ansible/inventory.ini ../../ansible/ansible.yml
 
 
 # check for errors

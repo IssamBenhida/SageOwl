@@ -44,7 +44,7 @@ module "firehose" {
 }
 
 resource "aws_s3_bucket" "backup" {
-  bucket     = "kinesis-activity-backup-local"
+  bucket = "kinesis-activity-backup-local"
   depends_on = [module.opensearch]
 }
 
@@ -55,7 +55,7 @@ resource "aws_cloudwatch_log_group" "example" {
 resource "aws_cloudwatch_log_stream" "example" {
   log_group_name = aws_cloudwatch_log_group.example.name
   name           = "local-instance"
-  depends_on     = [aws_cloudwatch_log_group.example]
+  depends_on = [aws_cloudwatch_log_group.example]
 }
 
 resource "aws_cloudwatch_log_subscription_filter" "example" {
@@ -64,5 +64,5 @@ resource "aws_cloudwatch_log_subscription_filter" "example" {
   filter_pattern  = ""
   destination_arn = module.firehose.stream_arn
   role_arn        = "arn:aws:iam::000000000000:role/kinesis_role"
-  depends_on      = [module.firehose]
+  depends_on = [module.firehose]
 }

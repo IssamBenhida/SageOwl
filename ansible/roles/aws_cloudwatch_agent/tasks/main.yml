@@ -33,6 +33,5 @@
     - name: deploy cloudWatch agent
       command: "{{ agent_path }} -a fetch-config -m onPremise -c file:{{ config_path }} -s"
       notify: restart amazon cloudWatch agent
-      when: agent_uploaded.changed
 
   when: ansible_os_family in ["Debian", "Ubuntu"]

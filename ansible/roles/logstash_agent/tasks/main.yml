@@ -69,6 +69,7 @@
         path: "{{ output_log_file }}"
         owner: logstash
         group: logstash
+
       notify: restart logstash service
 
   when: ansible_os_family in ["Debian", "Ubuntu"]

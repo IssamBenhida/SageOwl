@@ -1,5 +1,6 @@
 ---
 - hosts: all
+  become: yes
   roles:
     - aws_cloudwatch_agent
     - logstash_agent

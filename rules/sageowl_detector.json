@@ -14,7 +14,7 @@
         "description": "apache access detector for security analytics",
         "custom_rules": [
           {
-            "id" : "CQBhNJIBbwhHGg7A7S0V"
+            "id" : "EYdmQ5IB7BuRQjcA4gz6"
           }
         ],
         "indices": [

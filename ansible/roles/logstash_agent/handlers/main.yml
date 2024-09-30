@@ -1,6 +1,5 @@
 ---
 # handlers file for logstash_agent
-
 - name: restart logstash service
   systemd:
     name: logstash

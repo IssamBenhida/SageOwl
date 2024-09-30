@@ -19,10 +19,10 @@
   },
   "detection": {
     "selection1": {
-      "request_path": "*../*"
+      "http.request.url": "*../*"
     },
     "selection2": {
-      "request_path": "*..../*"
+      "http.request.url": "*..../*"
     },
     "condition": "selection1 or selection2"
   },

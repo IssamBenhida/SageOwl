@@ -7,7 +7,7 @@ input {
 filter {
   dissect {
     mapping => {
-      "message" => '%{client_ip} - - [%{timestamp}] "%{http_method} %{request} HTTP/%{http_version}" %{response_code} %{bytes} "%{referrer}" "%{user_agent}"'
+      "message" => '%{client_ip} - - [%{timestamp}] "%{http.request.method} %{http.request.url} HTTP/%{http.flavor}" %{http.response.code} %{http.response.bytes} "%{http.referrer}" "%{http.user_agent.browser} (%{http.user_agent.os}) %{http.user_agent.platform} %{http.user_agent.details}"'
     }
   }
   date {
