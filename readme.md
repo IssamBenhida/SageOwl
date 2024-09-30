@@ -36,15 +36,13 @@
     <li>
       <a href="#Architecture">Architecture</a>
       <ul>
-        <li><a href="#AWS Architecture Diagram">AWS architecture diagram</a></li>
+        <li><a href="####AWS Architecture Diagram">AWS architecture diagram</a></li>
+      </ul>
+      <ul>
+        <li><a href="####Disaster Recovery Plan">AWS architecture diagram</a></li>
       </ul>
     </li>
     <li><a href="#Environments">Environments</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -83,6 +81,8 @@ This project focuses on building a scalable, serverless SIEM solution on AWS, le
 </p>
 
 The platform is designed to provide real-time log analysis, threat detection, and high availability to ensure a robust and efficient security monitoring system.
+
+#### Disaster Recovery Plan
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
