@@ -43,6 +43,9 @@
       </ul>
     </li>
     <li><a href="#Environments">Environments</a></li>
+    <ul>
+        <li><a href="#Development">Development</a></li></li>
+    </ul>
   </ol>
 </details>
 
@@ -86,9 +89,9 @@ The platform is designed to provide real-time log analysis, threat detection, an
 Sage owl project employs a cost-effective **backup and restore** strategy as part of its disaster recovery plan.
 
 + **Recovery Point Objective (RPO)**:
-This project established clear recovery objectives to ensure robust data protection and quick recovery from potential disruptions. The RPO is calculated between 10 and 15 minutes allowing for minimal data loss in the event of a failure.
+This project established clear recovery objectives to ensure robust data protection and quick recovery from potential disruptions. The RPO is calculated between **10 and 15 minutes** allowing for minimal data loss in the event of a failure.
 + **Recovery Time Objective (RTO)**:
-Simultaneously, the RTO is calculated between 15 and 30 minutes, ensuring that the system can be restored and operational within this timeframe. 
+Simultaneously, the RTO is calculated between **15 and 30 minutes**, ensuring that the system can be restored and operational within this timeframe. 
 
 <br>
 
@@ -102,7 +105,13 @@ Simultaneously, the RTO is calculated between 15 and 30 minutes, ensuring that t
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
 ## Environments
+This project is structured into three distinct environments: **development**, **staging**, and **production**. Each environment is configured to support specific stages of the development lifecycle, allowing for efficient testing and deployment processes while ensuring that changes can be validated before reaching the production stage.
 
+#### Development
+
+#### Staging
+
+#### Production
 <br>
 
 <p align="center">
