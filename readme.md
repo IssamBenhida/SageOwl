@@ -108,7 +108,7 @@ Simultaneously, the RTO is calculated between **15 and 30 minutes**, ensuring th
 This project is structured into three distinct environments: **development**, **staging**, and **production**. Each environment is configured to support specific stages of the development lifecycle, allowing for efficient testing and deployment processes while ensuring that changes can be validated before reaching the production stage.
 
 #### Development
-In the development environment, we leverage LocalStack to simulate AWS services, providing a risk-free testing environment at no cost :money:.
+In the development environment, we leverage <a href="https://www.localstack.cloud/">LocalStack</a> to simulate AWS services, providing a risk-free testing environment at no cost :moneybag:.
 
 <br>
 
