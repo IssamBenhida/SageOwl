@@ -83,11 +83,12 @@ This project focuses on building a scalable, serverless SIEM solution on AWS, le
 The platform is designed to provide real-time log analysis, threat detection, and high availability to ensure a robust and efficient security monitoring system.
 
 #### Disaster Recovery Plan
+"Sage Owl" project employs a cost-effective backup and restore strategy as part of its disaster recovery plan
 
 <br>
 
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/disaster.png?raw=true" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/issambenhid/assets/images/disaster.png?raw=true" alt="">
 </p>
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
