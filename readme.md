@@ -96,8 +96,8 @@ Simultaneously, the RTO is calculated between 15 and 30 minutes, ensuring that t
 <a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/disaster.png?raw=true" alt="">
 </p>
 
-[!NOTE]
-- It is highly recommended to periodically review and adjust the recovery objectives based on the importance of the data being processed and stored. Different data sets may have varying levels of criticality, and tailoring the Recovery Point Objective (RPO) and Recovery Time Objective (RTO) to reflect this can enhance the overall effectiveness of the disaster recovery plan.
+> [!TIP]
+> It is highly recommended to periodically review and adjust the recovery objectives based on the importance of the data being processed and stored. Different data sets may have varying levels of criticality, and tailoring the Recovery Point Objective (RPO) and Recovery Time Objective (RTO) to reflect this can enhance the overall effectiveness of the disaster recovery plan.
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
