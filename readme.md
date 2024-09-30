@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image00.gif?raw=true" height="70%" width="70%" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image00.gif?raw=true" height="80%" width="80%" alt="">
 </p>
 
 <p align="center">
