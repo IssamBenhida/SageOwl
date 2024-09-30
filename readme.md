@@ -80,9 +80,13 @@ This project focuses on building a scalable, serverless SIEM solution on AWS, le
 
 #### AWS Architecture Diagram
 
+<br>
+
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/issambenhida/repo/blob/main/arch.drawio.svg?raw=true" height="90%" width="90%" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/issambenhida/repo/blob/main/arch.drawio.svg?raw=true" height="95%" width="95%" alt="">
 </p>
+
+<br>
 
 The platform is designed to provide real-time log analysis, threat detection, and high availability to ensure a robust and efficient security monitoring system.
 
