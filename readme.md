@@ -121,7 +121,7 @@ It is also possible to ensure the smooth integration and maintenance of local AW
 <br>
 
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/repo/blob/main/image01.png?raw=true" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/sageowl/blob/main/assets/images/image01.png?raw=true" alt="">
 </p>
 
 #### Staging
