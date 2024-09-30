@@ -23,6 +23,41 @@
 
 <br>
 
+<table>
+  <tr>
+    <th style="text-align:center">Feature</th>
+    <th style="text-align:center">Description</th>
+  </tr>
+  <tr>
+    <td style="text-align:center">🏰 Durable</td>
+    <td style="text-align:center">Built to last, even in the harshest conditions.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">⚡ One-Touch Deployment</td>
+    <td style="text-align:center">Get started in seconds.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">💰 Free Testing</td>
+    <td style="text-align:center">Experiment without the expenses.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">⚖️ Scalable</td>
+    <td style="text-align:center">Adapt to your needs without limits.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">🟢 Highly Available</td>
+    <td style="text-align:center">Always on, always ready.</td>
+  </tr>
+</table>
+
+| Feature                | Description                                     |
+|------------------------|-------------------------------------------------|
+| 🏰 Durable             | Built to last, even in the harshest conditions. |
+| ⚡ One-Touch Deployment | Get started in seconds.                         |
+| 💰 Free Testing        | Experiment without the expenses.                |
+| ⚖️ Scalable            | Adapt to your needs without limits.             |
+| 🟢 Highly Available    | Always on, always ready.                        |
+
 + :european_castle: Durable: Built to last, even in the harshest conditions.
 + :zap: One-Touch Deployment: Get started in seconds.<br>
 + :moneybag: Free Testing: Experiment without the expenses.<br>
