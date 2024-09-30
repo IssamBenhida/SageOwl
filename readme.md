@@ -60,6 +60,8 @@
 
 ### Features:
 
+Key features of the project:
+
 | Feature               | Description                                                                  |
 |-----------------------|------------------------------------------------------------------------------|
 | 🏰 Durable            | Built to last through harsh conditions, heavy workloads, and long-term use.   |
@@ -69,13 +71,7 @@
 | 🟢 Highly Available   | Always operational, offering continuous uptime, reliability, and readiness.   |
 
 
-+ **User Experience**: User-friendly interface for efficient monitoring, alerting, and incident response
-+ **Log Types**: System, web application, network, security, and aws cloud services logs.
-+ **Compliance**: Adherence to GDPR, HIPAA, and other industry standards
-+ **Scalability**: Seamless scaling to accommodate increasing workloads
-+ **Analytics**: Anomaly detection, event correlation, threat identification
-+ **Enrichment**: Contextual data enrichment for enhanced analysis
-+ **Integration:** Integration with existing security tools
+User-friendly monitoring, alerting, and incident response, with support for various log types and industry compliance. Offers advanced analytics, data enrichment, and integration with security tools.
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
