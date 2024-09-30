@@ -43,7 +43,10 @@
     <li><a href="#Environments">Environments</a></li>
     <ul>
         <li><a href="#Development">Development</a></li></li>
+        <li><a href="#Staging">Staging</a></li></li>
+        <li><a href="#Production">Production</a></li></li>
     </ul>
+    <li><a href="#CI/CD With Jenkins">CI/CD With Jenkins</a></li>
   </ol>
 </details>
 
@@ -78,7 +81,7 @@ This project focuses on building a scalable, serverless SIEM solution on AWS, le
 #### AWS Architecture Diagram
 
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/issambenhida/repo/blob/main/arch.drawio.svg?raw=true" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/issambenhida/repo/blob/main/arch.drawio.svg?raw=true" height="90%" width="90%" alt="">
 </p>
 
 The platform is designed to provide real-time log analysis, threat detection, and high availability to ensure a robust and efficient security monitoring system.
@@ -124,6 +127,9 @@ It is also possible to ensure the smooth integration and maintenance of local AW
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
+## CI/CD With Jenkins
+
+![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
 
 ## Commands
 
