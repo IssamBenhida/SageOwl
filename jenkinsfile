@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    environment {
+        ENV = 'development'
+    }
+
+    stages {
+        stage ('development'){
+            steps {
+                git branch: 'main', url: 'https://github.com/issambenhida/sageowl.git', credentialsId: '01'
+                sh 'flake8 environments/development/index.py'
+            }
+        }
+    }
+
+}
