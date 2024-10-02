@@ -16,13 +16,12 @@ module "opensearch" {
   depends_on = [aws_cloudwatch_log_stream.example]
 }
 
-
 module "lambda" {
   source        = "../../modules/lambda"
   function_name = "transformer"
   description   = "lambda function for log transformation"
   lambda_role   = aws_iam_role.lambda_role.arn
-  source_path   = "index.py"
+  source_path   = "../../lambda/index.py"
   handler       = "index.handler"
   runtime       = "python3.7"
 }
@@ -44,7 +43,7 @@ module "firehose" {
 }
 
 resource "aws_s3_bucket" "backup" {
-  bucket = "kinesis-activity-backup-local"
+  bucket     = "kinesis-activity-backup-local"
   depends_on = [module.opensearch]
 }
 
@@ -55,7 +54,7 @@ resource "aws_cloudwatch_log_group" "example" {
 resource "aws_cloudwatch_log_stream" "example" {
   log_group_name = aws_cloudwatch_log_group.example.name
   name           = "local-instance"
-  depends_on = [aws_cloudwatch_log_group.example]
+  depends_on     = [aws_cloudwatch_log_group.example]
 }
 
 resource "aws_cloudwatch_log_subscription_filter" "example" {
@@ -64,5 +63,5 @@ resource "aws_cloudwatch_log_subscription_filter" "example" {
   filter_pattern  = ""
   destination_arn = module.firehose.stream_arn
   role_arn        = "arn:aws:iam::000000000000:role/kinesis_role"
-  depends_on = [module.firehose]
+  depends_on      = [module.firehose]
 }

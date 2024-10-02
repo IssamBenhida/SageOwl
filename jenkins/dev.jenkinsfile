@@ -1,0 +1,75 @@
+pipeline {
+    agent {
+        node {
+            label 'linux-server'
+            customWorkspace '/tmp/jenkins/'
+        }
+    }
+    options {
+        timeout(time: 1, unit: 'HOURS')
+    }
+    environment {
+        TF_VAR_ENV = 'dev'
+        PIPENV_PIPFILE = "${WORKSPACE}/lambda/pipfile"
+    }
+    stages {
+        stage('Initializing.') {
+            steps {
+                echo 'installing environment dependencies...'
+                timeout(time: 5, unit: 'MINUTES') {
+                    git branch: 'main',
+                        url: 'https://github.com/issambenhida/sageowl.git',
+                        credentialsId: '01'
+                }
+                sh 'pipenv install'
+            }
+        }
+        stage('Code Quality Check.') {
+            stages{
+                stage('Terraform Check.'){
+                    steps{
+                        sh '''
+                        pipenv run tflocal fmt -chdir=environments/dev -check
+                        pipenv run tflocal -chdir=environments/dev validate
+                        '''
+                    }
+                }
+                stage('Ansible Check.'){
+                    steps{
+                        sh 'pipenv run ansible-lint ansible/*'
+                    }
+                }
+                stage('Python Check.'){
+                    steps{
+                        sh '''
+                        pipenv run flake8 lambda/*.py
+                        pipenv run bandit lambda/*.py
+                        pipenv run safety check || pip-audit
+                        '''
+                    }
+                }
+                stage('Docker Compose Check.'){
+                    steps{
+                        sh '''
+                        hadolint docker-compose.yaml
+                        '''
+                    }
+                }
+            }
+            /*
+            steps{
+                script {
+                    withSonarQubeEnv('SonarQube Server') {
+                        sh '''
+                            sonar-scanner \
+                                -Dsonar.projectKey=sageowl \
+                                -Dsonar.sources=. \
+                                -Dsonar.host.url=http://localhost:9000 \
+                                -Dsonar.login=dummy_token
+                        '''
+                    }
+                }
+            }*/
+        }
+    }
+}

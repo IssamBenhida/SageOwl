@@ -1,16 +1,71 @@
 pipeline {
-    agent any
+
+    agent {
+        node {
+            label 'linux-server'
+            customWorkspace '/opt/jenkins/'
+        }
+    }
+
+    options {
+        timeout(time: 1, unit: 'HOURS')
+    }
+
     environment {
-        ENV = 'development'
+        TF_VAR_ENV = ''
+    }
+
+    parameters {
+        // The parameters directive provides a list of parameters
+        // that a user should provide when triggering the Pipeline.
     }
 
     stages {
-        stage ('development'){
+        environment {
+            ENV = ''
+        }
+        stage ('dev'){
+            environment {
+                ENV = 'dev'
+            }
+
             steps {
                 git branch: 'main', url: 'https://github.com/issambenhida/sageowl.git', credentialsId: '01'
-                sh 'flake8 environments/development/index.py'
+                sh 'flake8 environments/dev/index.py',
+            }
+
+            stages{
+                stage (){
+                    // stage within an other stage
+                }
+            }
+
+            parallel {}
+
+            input {
+                // The input directive on a stage allows you to prompt for input,
+                // using the input step. The stage will pause after any options have been applied,
+                // and before entering the agent block for that stage or evaluating the when condition of the stage.
+                // If the input is approved, the stage will then continue.
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+        }
+
+        stage ("stag"){
+            when {
+                // The when directive allows the Pipeline to determine whether
+                // the stage should be executed depending on the given condition.
             }
         }
     }
 
+    post {
+        // The post section defines one or more additional steps
+        // that are run upon the completion of a Pipeline
+    }
 }

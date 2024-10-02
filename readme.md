@@ -51,7 +51,7 @@
 </details>
 
 
-![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
+![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 ## Overview
 
@@ -72,7 +72,7 @@ The features of this project are numerous, including user-friendly monitoring, a
 | ⚖️ Scalable           | Seamlessly grow and expand without limitations, handling increasing demands.  |
 | 🏰 Durable            | Built to last through harsh conditions, heavy workloads, and long-term use.   |
 
-![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
+![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 ## Architecture
 
@@ -83,7 +83,7 @@ This project focuses on building a scalable, serverless SIEM solution on AWS, le
 <br>
 
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/issambenhida/repo/blob/main/arch.drawio.svg?raw=true" height="95%" width="95%" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image02.svg?raw=true" height="95%" width="95%" alt="">
 </p>
 
 <br>
@@ -101,13 +101,13 @@ Simultaneously, the RTO is calculated between **15 and 30 minutes**, ensuring th
 <br>
 
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/disaster.png?raw=true" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image03.png?raw=true" alt="">
 </p>
 
 > [!TIP]
 > Different data sets may have varying levels of criticality, and tailoring the Recovery Point Objective and Recovery Time Objective to reflect this can enhance the overall effectiveness of the disaster recovery plan.
 
-![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
+![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 ## Environments
 This project is structured into three distinct environments: **development**, **staging**, and **production**. Each environment is configured to support specific stages of the development lifecycle, allowing for efficient testing and deployment processes while ensuring that changes can be validated before reaching the production stage.
@@ -129,11 +129,11 @@ It is also possible to ensure the smooth integration and maintenance of local AW
 
 #### Production
 
-![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
+![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 ## CI/CD With Jenkins
 
-![-----------------------------------------------------](https://github.com/IssamBenhida/repo/blob/main/rainbow.png?raw=true)
+![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 ## Commands
 
