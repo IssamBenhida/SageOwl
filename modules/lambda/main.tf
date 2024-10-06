@@ -1,8 +1,8 @@
 resource "aws_lambda_function" "main" {
   function_name = var.function_name
   description   = var.description
-  filename      = local.zip_file_name
   role          = var.lambda_role
+  filename      = "index.zip"
   runtime       = var.runtime
   handler       = var.handler
 

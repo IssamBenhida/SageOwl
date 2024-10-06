@@ -1,6 +1,6 @@
 input {
   file {
-     path => "{{ input_log_file }}"
+     path => "{{ logstash_agent_input_log_file }}"
   }
 }
 
@@ -21,6 +21,6 @@ filter {
 
 output {
   file {
-    path => "{{ output_log_file }}"
+    path => "{{ logstash_agent_output_log_file }}"
   }
 }

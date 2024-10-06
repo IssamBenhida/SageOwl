@@ -1,37 +1,42 @@
 ---
 # tasks file for aws_cloudwatch_agent
 
-- block:
-    - name: check if cloudwatch agent is already installed
-      service_facts:
+- name: Ensure CloudWatch agent block tasks
+  when: ansible_os_family in ["Debian", "Ubuntu"]
+  block:
 
-    - block:
-        - name: check if cloudwatch agent .deb package exists
-          stat:
-            path: "{{ package_dest }}"
+    - name: Check if CloudWatch agent is already installed
+      ansible.builtin.service_facts:
+
+    - name: Ensure CloudWatch agent package handling block
+      when: "'amazon-cloudwatch-agent.service' not in services"
+      block:
+
+        - name: Check if CloudWatch agent .deb package exists
+          ansible.builtin.stat:
+            path: "{{ aws_cloudwatch_agent_package_dest }}"
           register: agent_downloaded
 
-        - name: download cloudwatch agent .deb package
-          get_url:
-            url: "{{ download_url }}"
-            dest: "{{ package_dest }}"
+        - name: Download CloudWatch agent .deb package
+          ansible.builtin.get_url:
+            url: "{{ aws_cloudwatch_agent_download_url }}"
+            dest: "{{ aws_cloudwatch_agent_package_dest }}"
+            mode: '0644'  # Set file permissions
           when: not agent_downloaded.stat.exists
 
-        - name: install cloudwatch agent
-          apt:
-            deb: "{{ package_dest }}"
+        - name: Install CloudWatch agent
+          ansible.builtin.apt:
+            deb: "{{ aws_cloudwatch_agent_package_dest }}"
             state: present
 
-      when: "'amazon-cloudwatch-agent.service' not in services"
-
-    - name: upload cloudwatch agent configuration file
-      template:
+    - name: Upload CloudWatch agent configuration file
+      ansible.builtin.template:
         src: localstack_config.json.j2
-        dest: "{{ config_path }}"
+        dest: "{{ aws_cloudwatch_agent_config_path }}"
+        mode: '0644'
       register: agent_uploaded
 
-    - name: deploy cloudWatch agent
-      command: "{{ agent_path }} -a fetch-config -m onPremise -c file:{{ config_path }} -s"
-      notify: restart amazon cloudWatch agent
-
-  when: ansible_os_family in ["Debian", "Ubuntu"]
+    - name: Deploy CloudWatch agent
+      ansible.builtin.command: "{{ aws_cloudwatch_agent_path }} -a fetch-config -m onPremise -c file:{{ aws_cloudwatch_agent_config_path }} -s"
+      notify: Restart amazon cloudWatch agent
+      changed_when: false

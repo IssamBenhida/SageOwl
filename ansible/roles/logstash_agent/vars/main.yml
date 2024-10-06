@@ -1,4 +1,4 @@
 ---
 # vars file for logstash_agent
-input_log_file: "/var/log/nginx/access.log"
-output_log_file: "/var/log/sageowl/main.log"
+logstash_agent_input_log_file: "/var/log/nginx/access.log"
+logstash_agent_output_log_file: "/var/log/sageowl/main.log"

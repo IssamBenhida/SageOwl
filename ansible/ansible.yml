@@ -1,6 +1,7 @@
 ---
-- hosts: all
-  become: yes
+- name: Setup AWS CloudWatch and Logstash agents
+  hosts: all
+  become: true
   roles:
     - aws_cloudwatch_agent
     - logstash_agent

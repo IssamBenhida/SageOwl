@@ -21,7 +21,7 @@ pipeline {
                         url: 'https://github.com/issambenhida/sageowl.git',
                         credentialsId: '01'
                 }
-                sh 'pipenv install'
+                /* sh 'pipenv install' */
             }
         }
         stage('Code Quality Check.') {

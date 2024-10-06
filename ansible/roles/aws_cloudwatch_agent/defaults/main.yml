@@ -1,9 +1,9 @@
 ---
 # defaults file for aws_cloudwatch_agent
-download_url: https://s3.amazonaws.com/amazoncloudwatch-agent/debian/amd64/latest/amazon-cloudwatch-agent.deb
-agent_path: /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl
-config_path: /opt/aws/amazon-cloudwatch-agent/amazon-cloudwatch-agent.json
-agent_log_file: /var/log/amazon/amazon-cloudwatch-agent.log
-package_dest: /tmp/amazon-cloudwatch-agent.deb
-service_name: amazon-cloudwatch-agent
-version: latest
+aws_cloudwatch_agent_download_url: https://s3.amazonaws.com/amazoncloudwatch-agent/debian/amd64/latest/amazon-cloudwatch-agent.deb
+aws_cloudwatch_agent_config_path: /opt/aws/amazon-cloudwatch-agent/amazon-cloudwatch-agent.json
+aws_cloudwatch_agent_path: /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl
+aws_cloudwatch_agent_log_file: /var/log/amazon/amazon-cloudwatch-agent.log
+aws_cloudwatch_agent_package_dest: /tmp/amazon-cloudwatch-agent.deb
+aws_cloudwatch_agent_service_name: amazon-cloudwatch-agent
+aws_cloudwatch_agent_version: latest

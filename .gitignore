@@ -1,6 +1,5 @@
 /.idea
 .terraform.lock.hcl
-/lambda/index.zip
 /environments/dev/.terraform
 /environments/dev/.terraform.lock.hcl
 /environments/stag/.terraform

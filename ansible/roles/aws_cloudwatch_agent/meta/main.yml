@@ -1,4 +1,9 @@
 galaxy_info:
-  author: issam ben
-  min_ansible_version: 2.1
+  author: issam
+  description: >
+    This role installs and configures the AWS CloudWatch Agent
+    on an on-premises Linux Debian-based server, allowing for
+    the monitoring of system metrics and logs.
+  min_ansible_version: "2.1"
   galaxy_tags: []
+  license: "no licence"
