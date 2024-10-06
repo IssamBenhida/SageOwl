@@ -137,7 +137,6 @@ LocalStack dashboard is great option as well.
 
 #### Staging
 
-#### Production
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
