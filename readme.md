@@ -130,7 +130,7 @@ LocalStack dashboard is great option as well.
 <br>
 
 <p align="center">
-<a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/sageowl/blob/main/assets/images/image04.svg?raw=true" height="95%" width="95%" alt="">
+<a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/sageowl/blob/main/assets/images/image04.png?raw=true" height="95%" width="95%" alt="">
 </p>
 
 <br>
