@@ -1,5 +1,6 @@
 /.idea
 .terraform.lock.hcl
+run.sh
 /environments/dev/.terraform
 /environments/dev/.terraform.lock.hcl
 /environments/stag/.terraform

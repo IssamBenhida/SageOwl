@@ -135,6 +135,10 @@ LocalStack dashboard is great option as well.
 
 <br>
 
+This should also make our testing process much faster, easier and risk-free.
+
+<br>
+
 #### Staging
 
 
@@ -144,6 +148,8 @@ LocalStack dashboard is great option as well.
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
+
+<!-- 
 ## Commands
 
 Prerequisites:
@@ -152,3 +158,5 @@ Prerequisites:
 pip install awscli-local
 pip install terraform-local
 ```
+
+!>
