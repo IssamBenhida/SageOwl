@@ -48,7 +48,8 @@ def get_geo_location(ip: str) -> dict:
 
 def handler(event_data):
     """
-    Process the incoming event data, transforming log entries and fetching geolocation.
+    Process the incoming event data, transforming log entries
+    and fetching geolocation.
 
     :param event_data: The incoming event containing log records
     :return: A dictionary with transformed records ready for output

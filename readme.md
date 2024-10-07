@@ -146,6 +146,18 @@ This should also make our testing process much faster, easier and risk-free.
 
 ## CI/CD With Jenkins
 
+The Continuous Integration and Continuous Deployment (CI/CD) pipeline for the Sage Owl project automates the build, testing, and deployment processes
+for the three environments to ensure code quality and accelerate delivery.
+
+
+<br>
+
+<p align="center">
+<a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/sageowl/blob/main/assets/images/image05.svg?raw=true" height="95%" width="95%" alt="">
+</p>
+
+<br>
+
 ![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 

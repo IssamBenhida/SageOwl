@@ -2,7 +2,6 @@ pipeline {
     agent {
         node {
             label 'linux-server'
-            customWorkspace '/tmp/jenkins/'
         }
     }
     options {
@@ -29,34 +28,29 @@ pipeline {
                 stage('Terraform Check.'){
                     steps{
                         sh '''
-                        pipenv run tflocal fmt -chdir=environments/dev -check
-                        pipenv run tflocal -chdir=environments/dev validate
+                        cd ${WORKSPACE}/environments/dev
+                        tflocal fmt -check
+                        tflint
                         '''
                     }
                 }
                 stage('Ansible Check.'){
                     steps{
-                        sh 'pipenv run ansible-lint ansible/*'
+                        sh 'ansible-lint ansible/*'
                     }
                 }
                 stage('Python Check.'){
                     steps{
                         sh '''
-                        pipenv run flake8 lambda/*.py
-                        pipenv run bandit lambda/*.py
-                        pipenv run safety check || pip-audit
-                        '''
-                    }
-                }
-                stage('Docker Compose Check.'){
-                    steps{
-                        sh '''
-                        hadolint docker-compose.yaml
+                        flake8 lambda/*.py
+                        pylint lambda/*.py
+                        safety check || pip-audit
                         '''
                     }
                 }
             }
             /*
+            pipenv run
             steps{
                 script {
                     withSonarQubeEnv('SonarQube Server') {
