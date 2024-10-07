@@ -14,7 +14,7 @@ terraform {
     dynamodb_table = "terraform-state-lock-table"
     bucket         = "terraform-state-lock-bucket"
     key            = "development/terraform.state"
-    role_arn       = data.aws_iam_policy_document.s3_state_policy
+    role_arn       = aws_iam_role.terraform_state_role.arn
     region         = "us-east-1"
   }
 }

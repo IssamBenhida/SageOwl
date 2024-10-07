@@ -1,3 +1,9 @@
+resource "aws_iam_role" "terraform_state_role" {
+  description        = "Terraform state file role for accessing s3 and dynamodb"
+  name               = "StateRole"
+  assume_role_policy = data.aws_iam_policy_document.terraform_state_policy.json
+}
+
 resource "aws_iam_role" "lambda_role" {
   description        = "Lambda role for accessing firehose."
   name               = "LambdaRole"
