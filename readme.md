@@ -44,7 +44,6 @@
     <ul>
         <li><a href="#Development">Development</a></li></li>
         <li><a href="#Staging">Staging</a></li></li>
-        <li><a href="#Production">Production</a></li></li>
     </ul>
     <li><a href="#CI/CD With Jenkins">CI/CD With Jenkins</a></li>
   </ol>
@@ -155,10 +154,6 @@ for the three environments to ensure code quality and accelerate delivery.
 <p align="center">
 <a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/sageowl/blob/main/assets/images/image05.svg?raw=true" height="95%" width="95%" alt="">
 </p>
-
-<br>
-
-![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 
 <!-- 
