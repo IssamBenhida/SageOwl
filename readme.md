@@ -1,7 +1,7 @@
 <p align="center">
-<a target="_blank" href=""></a><img src="https://img.shields.io/badge/Amazon%20Web%20Services-v5.1.2%20-gray?style=flat&logo=amazonwebservices&labelColor=orange" alt="shield">
+<a target="_blank" href=""></a><img src="https://img.shields.io/badge/Amazon%20Web%20Services-v5.0%20-gray?style=flat&logo=amazonwebservices&labelColor=orange" alt="shield">
 <a target="_blank" href=""></a><img src="https://img.shields.io/badge/ansible%20playbook-v2.17.1%20-gray?style=flat&logo=ansible&logoColor=black&labelColor=white" alt="shield">
-<a target="_blank" href=""></a><img src="https://img.shields.io/badge/HashiCorp%20Terraform-v5.1.2%20-gray?style=flat&logo=terraform&logoColor=white&labelColor=purple" alt="shield">
+<a target="_blank" href=""></a><img src="https://img.shields.io/badge/HashiCorp%20Terraform-v1.6.0%20-gray?style=flat&logo=terraform&logoColor=white&labelColor=purple" alt="shield">
 </p>
 <p align="center">
 <a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image00.gif?raw=true" height="60%" width="60%" alt="">

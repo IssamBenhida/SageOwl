@@ -2,5 +2,5 @@
 # vars file for aws_cloudwatch_agent
 
 aws_cloudwatch_agent_client_log_file_path: "/var/log/sageowl/main.log"
-aws_cloudwatch_agent_log_stream_name: "local-instance"
-aws_cloudwatch_agent_log_group_name: "localstack-log-group"
+aws_cloudwatch_agent_log_stream_name: "development"
+aws_cloudwatch_agent_log_group_name: "sageowl"
