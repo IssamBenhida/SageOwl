@@ -15,7 +15,7 @@ terraform {
     bucket         = "terraform-state-lock-bucket"
     key            = "development/terraform.state"
     role_arn       = aws_iam_role.terraform_state_role.arn
-    region         = data.aws_region.current.name
+    region         = "us-east-1"
     encrypt        = true
   }
 }

@@ -9,7 +9,7 @@ module "opensearch" {
     enabled = true
   }
 
-  depends_on = [aws_cloudwatch_log_stream.example]
+  depends_on = [aws_cloudwatch_log_stream.main]
 }
 
 module "lambda" {
@@ -28,12 +28,12 @@ module "firehose" {
   destination = "opensearch"
 
   opensearch_domain_arn  = module.opensearch.domain_arn
-  firehose_role_arn      = aws_iam_role.firehose_to_opensearch_role.arn
+  firehose_role_arn      = aws_iam_role.firehose_role.arn
   opensearch_index_name  = "sageowl"
   opensearch_type_name   = "_doc"
   enable_processing      = true
   processing_lambda_arn  = module.lambda.lambda_arn
-  processing_lambda_role = "arn:aws:iam::000000000000:role/LambdaRole"
+  processing_lambda_role = aws_iam_role.lambda_to_firehose_role.arn
   s3_backup_bucket_arn   = aws_s3_bucket.backup.arn
   s3_backup_mode         = "AllDocuments"
 }
@@ -43,21 +43,21 @@ resource "aws_s3_bucket" "backup" {
   depends_on = [module.opensearch]
 }
 
-resource "aws_cloudwatch_log_group" "example" {
-  name = "localstack-log-group"
+resource "aws_cloudwatch_log_group" "main" {
+  name = "sageowl"
 }
 
-resource "aws_cloudwatch_log_stream" "example" {
-  log_group_name = aws_cloudwatch_log_group.example.name
-  name           = "local-instance"
-  depends_on     = [aws_cloudwatch_log_group.example]
+resource "aws_cloudwatch_log_stream" "main" {
+  log_group_name = aws_cloudwatch_log_group.main.name
+  name           = "development"
+  depends_on     = [aws_cloudwatch_log_group.main]
 }
 
-resource "aws_cloudwatch_log_subscription_filter" "example" {
-  log_group_name  = aws_cloudwatch_log_group.example.name
-  name            = "kinesis-test"
+resource "aws_cloudwatch_log_subscription_filter" "main" {
+  name            = "firehose"
   filter_pattern  = ""
-  destination_arn = module.firehose.stream_arn
+  log_group_name  = aws_cloudwatch_log_group.main.name
   role_arn        = aws_iam_role.cloudwatch_to_firehose_role.arn
+  destination_arn = module.firehose.stream_arn
   depends_on      = [module.firehose]
 }

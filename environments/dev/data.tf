@@ -49,9 +49,11 @@ data "aws_iam_policy_document" "cloudwatch_to_firehose_policy" {
 data "aws_iam_policy_document" "firehose_policy" {
   version = "2012-10-17"
   statement {
-    effect = "Allow"
-    actions = ["lambda:InvokeFunction"]
-    resources = [module.lambda.lambda_arn]
+    effect    = "Allow"
+    actions   = ["lambda:InvokeFunction"]
+    resources = [
+      "arn:aws:lambda:::function:transformer"
+    ]
   }
   statement {
     effect = "Allow"
@@ -65,8 +67,8 @@ data "aws_iam_policy_document" "firehose_policy" {
     resources = [aws_s3_bucket.backup.arn]
   }
   statement {
-    effect = "Allow"
-    actions = ["es:ESHttpPut"]
+    effect    = "Allow"
+    actions   = ["es:ESHttpPut"]
     resources = [module.opensearch.domain_arn]
   }
 }
@@ -79,7 +81,9 @@ data "aws_iam_policy_document" "lambda_to_firehose_policy" {
       "firehose:PutRecord",
       "firehose:PutRecordBatch"
     ]
-    resources = [module.firehose.stream_arn]
+    resources = [
+      "arn:aws:firehose:::deliverystream/bullet"
+    ]
   }
 }
 
