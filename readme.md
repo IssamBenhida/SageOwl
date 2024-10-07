@@ -136,8 +136,6 @@ LocalStack dashboard is great option as well.
 
 This should also make our testing process much faster, easier and risk-free.
 
-<br>
-
 #### Staging
 
 
