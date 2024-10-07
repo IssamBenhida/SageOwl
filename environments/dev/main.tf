@@ -9,10 +9,6 @@ module "opensearch" {
     enabled = true
   }
 
-  timeouts = {
-    create = "2m"
-  }
-
   depends_on = [aws_cloudwatch_log_stream.example]
 }
 
