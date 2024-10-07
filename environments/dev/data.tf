@@ -33,8 +33,7 @@ data "aws_iam_policy_document" "terraform_state_policy" {
   }
 }
 
-
-data "aws_iam_policy_document" "lambda_policy" {
+data "aws_iam_policy_document" "cloudwatch_to_firehose_policy" {
   version = "2012-10-17"
   statement {
     effect = "Allow"
@@ -46,13 +45,41 @@ data "aws_iam_policy_document" "lambda_policy" {
   }
 }
 
+
 data "aws_iam_policy_document" "firehose_policy" {
   version = "2012-10-17"
   statement {
     effect = "Allow"
+    actions = ["lambda:InvokeFunction"]
+    resources = [module.lambda.lambda_arn]
+  }
+  statement {
+    effect = "Allow"
     actions = [
-      "es:ESHttpPut"
+      "s3:PutObject",
+      "s3:GetObject",
+      "s3:DeleteObject",
+      "s3:ListBucket",
+      "s3:GetBucketLocation"
     ]
+    resources = [aws_s3_bucket.backup.arn]
+  }
+  statement {
+    effect = "Allow"
+    actions = ["es:ESHttpPut"]
     resources = [module.opensearch.domain_arn]
   }
 }
+
+data "aws_iam_policy_document" "lambda_to_firehose_policy" {
+  version = "2012-10-17"
+  statement {
+    effect = "Allow"
+    actions = [
+      "firehose:PutRecord",
+      "firehose:PutRecordBatch"
+    ]
+    resources = [module.firehose.stream_arn]
+  }
+}
+

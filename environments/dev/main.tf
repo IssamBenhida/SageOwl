@@ -16,7 +16,7 @@ module "lambda" {
   source        = "../../modules/lambda"
   function_name = "transformer"
   description   = "lambda function for log transformation"
-  lambda_role   = aws_iam_role.lambda_role.arn
+  lambda_role   = aws_iam_role.lambda_to_firehose_role.arn
   source_path   = "../../lambda/index.py"
   handler       = "index.handler"
   runtime       = "python3.7"
@@ -24,15 +24,15 @@ module "lambda" {
 
 module "firehose" {
   source      = "../../modules/firehose"
-  name        = "opensearch-streaming"
+  name        = "bullet"
   destination = "opensearch"
 
   opensearch_domain_arn  = module.opensearch.domain_arn
-  firehose_role_arn      = "arn:aws:iam::000000000000:role/Firehose-Reader-Role"
+  firehose_role_arn      = aws_iam_role.firehose_to_opensearch_role.arn
   opensearch_index_name  = "sageowl"
   opensearch_type_name   = "_doc"
   enable_processing      = true
-  processing_lambda_arn  = "arn:aws:lambda:us-east-1:000000000000:function:transformer"
+  processing_lambda_arn  = module.lambda.lambda_arn
   processing_lambda_role = "arn:aws:iam::000000000000:role/LambdaRole"
   s3_backup_bucket_arn   = aws_s3_bucket.backup.arn
   s3_backup_mode         = "AllDocuments"
@@ -58,6 +58,6 @@ resource "aws_cloudwatch_log_subscription_filter" "example" {
   name            = "kinesis-test"
   filter_pattern  = ""
   destination_arn = module.firehose.stream_arn
-  role_arn        = "arn:aws:iam::000000000000:role/kinesis_role"
+  role_arn        = aws_iam_role.cloudwatch_to_firehose_role.arn
   depends_on      = [module.firehose]
 }
