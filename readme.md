@@ -43,7 +43,6 @@
     <li><a href="#Environments">Environments</a></li>
     <ul>
         <li><a href="#development">Development</a></li></li>
-        <li><a href="#staging">Staging</a></li></li>
     </ul>
     <li><a href="#cicd-with-jenkins">CI/CD With Jenkins</a></li>
     <li><a href="#deployment">Deployment</a></li>
