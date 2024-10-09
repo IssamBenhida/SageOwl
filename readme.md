@@ -176,7 +176,7 @@ for the three environments to ensure code quality and accelerate delivery.
 ## Deployment       
 
 <div align="right">
-  </b><a href="#table-of-contents"> <b>⬆️ Back to top</b> </a>
+  </b><a href="#table-of-contents"> <b>⬆️ Back Top</b> </a>
 </div>
 <br>
 
