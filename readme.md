@@ -161,11 +161,16 @@ The Continuous Integration and Continuous Deployment (CI/CD) pipeline for the Sa
 for the three environments to ensure code quality and accelerate delivery.
 
 #### Development
+
 <br>
 
 <p align="center">
 <a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/sageowl/blob/main/assets/images/image05.svg?raw=true" height="95%" width="95%" alt="">
 </p>
+
+<br>
+
+![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 ## Deployment
 This project can be deployed across multiple environments using Terraform and Ansible.
@@ -173,10 +178,9 @@ Follow the steps below to deploy the Sage Owl solution.
 
 #### Prerequisites
 Ensure the following tools are installed on your local machine:
-- terraform, tflocal
-- awslocal
-- ansible
 - docker and docker compose (for local testing)
+- terraform
+- ansible
 
 #### Deploying Locally
 
