@@ -84,6 +84,8 @@ The features of this project are numerous, including user-friendly monitoring, a
 | ⚖️ Scalable           | Seamlessly grow and expand without limitations, handling increasing demands.  |
 | 🏰 Durable            | Built to last through harsh conditions, heavy workloads, and long-term use.   |
 
+<div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
+
 ![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 ## Architecture
@@ -218,6 +220,12 @@ tflocal apply --auto-approve
 ```bash
 ansible-playbook -i ansible/inventory.ini ansible/ansible.yml -v 
 ```
+
+6. Enjoy:
+```
+Navgate to http://localhost:5601
+```
+
 <div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
 
 <!-- 
