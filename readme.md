@@ -69,6 +69,8 @@
 
 <br>
 
+This snapshot is taken from with opensearch dashboard.
+
 ### Features:
 
 The features of this project are numerous, including user-friendly monitoring, alerting, and incident response, with support for various log types and industry compliance. It also offers advanced analytics, data enrichment, and integration with security tools.
