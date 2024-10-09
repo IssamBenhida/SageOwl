@@ -172,7 +172,10 @@ for the three environments to ensure code quality and accelerate delivery.
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
-## Deployment       [⬆️ Back to Top](#table-of-contents)
+## Deployment       
+<div align="right">
+  <a href="#table-of-contents"> ⬆️ Back to top </a>
+</div>
 
 This project can be deployed across multiple environments using Terraform and Ansible.
 Follow the steps below to deploy the Sage Owl solution.
