@@ -59,6 +59,14 @@
 > [!IMPORTANT]
 > This project is designed to be flexible and customizable. Feel free to modify the architecture or code to suit your specific requirements. If you appreciate this work, please leave a star :star:.
 
+<br>
+
+<p align="center">
+<a target="_blank" href=""></a><img src="https://github.com/issambenhida/sageowl/blob/main/assets/images/image06.png?raw=true" height="95%" width="95%" alt="">
+</p>
+
+<br>
+
 ### Features:
 
 The features of this project are numerous, including user-friendly monitoring, alerting, and incident response, with support for various log types and industry compliance. It also offers advanced analytics, data enrichment, and integration with security tools.
@@ -93,7 +101,9 @@ The platform is designed to provide real-time log analysis, threat detection, an
 Sage owl project employs a cost-effective **backup and restore** strategy as part of its disaster recovery plan.
 
 + **Recovery Point Objective (RPO)**:
-This project established clear recovery objectives to ensure robust data protection and quick recovery from potential disruptions. The RPO is calculated between **10 and 15 minutes** allowing for minimal data loss in the event of a failure.
+This project established clear recovery goals
+  to ensure robust data protection and quick recovery from potential disruptions.
+  The RPO is calculated between **10 and 15 minutes** allowing for minimal data loss in the event of a failure.
 + **Recovery Time Objective (RTO)**:
 Simultaneously, the RTO is calculated between **15 and 30 minutes**, ensuring that the system can be restored and operational within this timeframe. 
 
@@ -124,7 +134,7 @@ In the development environment, we leverage <a href="https://www.localstack.clou
 
 It is also possible to ensure the smooth integration and maintenance of local AWS services by using **tflocal** for Terraform resource deployment and **awslocal** for LocalStack interaction.
 
-LocalStack dashboard is great option as well.
+LocalStack dashboard is a great option as well.
 
 <br>
 
@@ -146,12 +156,16 @@ This should also make our testing process much faster, easier and risk-free.
 The Continuous Integration and Continuous Deployment (CI/CD) pipeline for the Sage Owl project automates the build, testing, and deployment processes
 for the three environments to ensure code quality and accelerate delivery.
 
-
+#### Development
 <br>
 
 <p align="center">
 <a target="_blank" href=""></a><img src="https://github.com/IssamBenhida/sageowl/blob/main/assets/images/image05.svg?raw=true" height="95%" width="95%" alt="">
 </p>
+
+## Deployment
+#### Locally
+
 
 
 <!-- 

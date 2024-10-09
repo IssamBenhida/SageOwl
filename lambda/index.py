@@ -46,7 +46,7 @@ def get_geo_location(ip: str) -> dict:
         raise GeoLocationError(f"Unexpected error occurred: {e}") from e
 
 
-def handler(event_data):
+def handler(event_data, context):
     """
     Process the incoming event data, transforming log entries
     and fetching geolocation.
