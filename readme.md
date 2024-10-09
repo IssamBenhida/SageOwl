@@ -201,10 +201,17 @@ docker-compose up -d
 cd environments/dev
 tflocal init
 ```
+
 4. Apply Terraform Configuration:
 ```bash
 tflocal apply --auto-approve
 ```
+
+5. Set Up CloudWatch Agent and Logstash Agent with Ansible:
+```bash
+ansible-playbook -i ansible/inventory.ini ansible/ansible.yml -v 
+```
+
 
 <!-- 
 ## Commands
