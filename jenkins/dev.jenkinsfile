@@ -51,19 +51,7 @@ pipeline {
             }
             /*
             pipenv run
-            steps{
-                script {
-                    withSonarQubeEnv('SonarQube Server') {
-                        sh '''
-                            sonar-scanner \
-                                -Dsonar.projectKey=sageowl \
-                                -Dsonar.sources=. \
-                                -Dsonar.host.url=http://localhost:9000 \
-                                -Dsonar.login=dummy_token
-                        '''
-                    }
-                }
-            }*/
+            */
         }
     }
 }

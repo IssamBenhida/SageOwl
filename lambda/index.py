@@ -73,7 +73,7 @@ def handler(event_data, context):
             if parser.match(log_event['message']):
                 try:
                     message_data = json.loads(log_event['message'])
-                    # If message cannot be parsed as JSON, log the failure
+                    # If a message cannot be parsed as JSON, log the failure
                 except json.JSONDecodeError:
                     failure += 1
                     continue
@@ -134,7 +134,7 @@ def handler(event_data, context):
             else:
                 failure += 1
 
-        # Append document to output in Elasticsearch bulk API format
+        # Append document to output in Opensearch bulk API format
         for i, event in enumerate(transformed_events):
             output.append({
                 'recordId': str(i),
