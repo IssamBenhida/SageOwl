@@ -121,6 +121,8 @@ Simultaneously, the RTO is calculated between **15 and 30 minutes**, ensuring th
 > [!TIP]
 > Different data sets may have varying levels of criticality, and tailoring the Recovery Point Objective and Recovery Time Objective to reflect this can enhance the overall effectiveness of the disaster recovery plan.
 
+<div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
+
 ![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 ## Environments
@@ -153,6 +155,7 @@ This should also make our testing process much faster, easier and risk-free.
 
 #### Staging
 
+<div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
 
 ![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
@@ -171,14 +174,11 @@ for the three environments to ensure code quality and accelerate delivery.
 
 <br>
 
+<div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
+
 ![-----------------------------------------------------](https://github.com/IssamBenhida/sageowl/blob/main/assets/images/rainbow.png?raw=true)
 
 ## Deployment       
-
-<div align="right">
-  </b><a href="#table-of-contents"> <b>⬆️ Back Top</b> </a>
-</div>
-<br>
 
 This project can be deployed across multiple environments using Terraform and Ansible.
 Follow the steps below to deploy the Sage Owl solution.
@@ -218,7 +218,7 @@ tflocal apply --auto-approve
 ```bash
 ansible-playbook -i ansible/inventory.ini ansible/ansible.yml -v 
 ```
-
+<div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
 
 <!-- 
 ## Commands
