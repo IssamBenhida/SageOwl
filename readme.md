@@ -47,6 +47,9 @@
     </ul>
     <li><a href="#cicd-with-jenkins">CI/CD With Jenkins</a></li>
     <li><a href="#deployment">Deployment</a></li>
+    <ul>
+        <li><a href="deploying-locally">Deploying Locally</a></li>
+    </ul>
   </ol>
 </details>
 
