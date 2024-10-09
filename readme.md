@@ -168,9 +168,39 @@ for the three environments to ensure code quality and accelerate delivery.
 </p>
 
 ## Deployment
-#### Locally
+This project can be deployed across multiple environments using Terraform and Ansible.
+Follow the steps below to deploy the Sage Owl solution.
 
+#### Prerequisites
+Ensure the following tools are installed on your local machine:
+- terraform, tflocal
+- awslocal
+- ansible
+- docker and docker compose (for local testing)
 
+#### Deploying Locally
+
+1. Clone the Repository:
+
+```bash
+git clone https://github.com/IssamBenhida/SageOwl.git
+cd SageOwl
+```
+
+2. Deploy the docker containers:
+```bash
+docker-compose up -d
+```
+
+3. Initialize Terraform:
+```bash
+cd environments/dev
+tflocal init
+```
+4. Apply Terraform Configuration:
+```bash
+tflocal apply --auto-approve
+```
 
 <!-- 
 ## Commands
