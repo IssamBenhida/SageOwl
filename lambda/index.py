@@ -9,18 +9,18 @@ import os
 import gzip
 import json
 import base64
+import logging
 from io import BytesIO
 from datetime import datetime
 import requests
-from requests.exceptions import HTTPError, Timeout
+from requests.exceptions import HTTPError
+
+# Setup logging for Lambda
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 # log parser for cloudwatch logs
-parser = re.compile(r'^(.*)$')
-
-
-# Custom exception for geolocation errors
-class GeoLocationError(Exception):
-    """Custom exception for geolocation errors."""
+parser = re.compile(r'^\{.*"timestamp": "\d{2}/\w{3}/\d{4}:\d{2}:\d{2}:\d{2} \+\d{4}".*}$')
 
 
 def get_geo_location(ip: str) -> dict:
@@ -32,18 +32,26 @@ def get_geo_location(ip: str) -> dict:
     :raises GeoLocationError: If the request fails or the IP is invalid
     """
     # Load the API URL from environment variables for flexibility
-    api_url = os.getenv("geo_api_url", "https://ipinfo.io/")
-
+    api_url = os.getenv("geo_api_url")
+    null_response = {
+        'ip': None,
+        'country': None,
+        'city': None,
+        'region': None,
+        'loc': None,
+        'org': None
+    }
     try:
         # Make the API request to fetch geolocation info
         response = requests.get(f"{api_url}/{ip}/json", timeout=5)
-        response.raise_for_status()  # Raise an HTTPError on bad responses
-        return response.json()  # Return the geolocation data as JSON
+        # Raise an HTTPError on bad responses
+        response.raise_for_status()
+        # Return the geolocation data as JSON
+        return response.json()
 
-    except (HTTPError, Timeout) as e:
-        raise GeoLocationError(f"Failed to fetch geolocation data: {e}") from e
-    except Exception as e:
-        raise GeoLocationError(f"Unexpected error occurred: {e}") from e
+    except HTTPError as e:
+        logger.error("Unexpected error occurred for IP %s: %s", ip, e)
+        return null_response
 
 
 def handler(event_data, context):
@@ -51,10 +59,10 @@ def handler(event_data, context):
     Process the incoming event data, transforming log entries
     and fetching geolocation.
 
+    :param context:
     :param event_data: The incoming event containing log records
     :return: A dictionary with transformed records ready for output
     """
-    success, failure = 0, 0
     output = []
 
     for record in event_data['records']:
@@ -74,8 +82,8 @@ def handler(event_data, context):
                 try:
                     message_data = json.loads(log_event['message'])
                     # If a message cannot be parsed as JSON, log the failure
-                except json.JSONDecodeError:
-                    failure += 1
+                except json.JSONDecodeError as e:
+                    logger.error("Json error occurred: %e", e)
                     continue
 
                 connection = get_geo_location(message_data.get("client_ip"))
@@ -130,14 +138,11 @@ def handler(event_data, context):
                     )
                 }
                 transformed_events.append(result)
-                success += 1
-            else:
-                failure += 1
 
         # Append document to output in Opensearch bulk API format
         for i, event in enumerate(transformed_events):
             output.append({
-                'recordId': str(i),
+                'recordId': str(i) + context.log_stream_name,
                 'result': 'Ok',
                 'data': base64.b64encode(
                     json.dumps(event).encode('utf-8')

@@ -33,3 +33,10 @@ variable "source_path" {
   type        = string
   default     = null
 }
+
+variable "environment_variables" {
+  description = "Lambda function environment variables."
+  type        = map(string)
+  default     = {}
+}
+

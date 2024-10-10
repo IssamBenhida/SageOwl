@@ -7,4 +7,11 @@ resource "aws_lambda_function" "main" {
   handler       = var.handler
 
   source_code_hash = data.archive_file.lambda.output_base64sha256
+
+  dynamic "environment" {
+    for_each = length(keys(var.environment_variables)) == 0 ? [] : [true]
+    content {
+      variables = var.environment_variables
+    }
+  }
 }

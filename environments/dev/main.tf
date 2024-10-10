@@ -24,6 +24,10 @@ module "lambda" {
   source_path   = "../../lambda/index.py"
   handler       = "index.handler"
   runtime       = "python3.7"
+
+  environment_variables = {
+    geo_api_url = "https://ipinfo.io/"
+  }
 }
 
 module "firehose" {
