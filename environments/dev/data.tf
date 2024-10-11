@@ -49,8 +49,8 @@ data "aws_iam_policy_document" "cloudwatch_to_firehose_policy" {
 data "aws_iam_policy_document" "firehose_policy" {
   version = "2012-10-17"
   statement {
-    effect    = "Allow"
-    actions   = ["lambda:InvokeFunction"]
+    effect  = "Allow"
+    actions = ["lambda:InvokeFunction"]
     resources = [
       "arn:aws:lambda:::function:transformer"
     ]

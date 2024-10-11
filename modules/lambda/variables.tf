@@ -40,3 +40,20 @@ variable "environment_variables" {
   default     = {}
 }
 
+variable "ephemeral_storage_size" {
+  description = "Lambda function temporary storage in mb."
+  type        = number
+  default     = 512
+  validation {
+    condition = var.ephemeral_storage_size >= 512 && var.ephemeral_storage_size <= 10240
+    error_message = "The ephemeral storage size must be between 512 mb and 10 gb."
+  }
+}
+
+variable "tags" {
+  description = "Lambda function tags."
+  type        = map(string)
+  default     = {}
+}
+
+

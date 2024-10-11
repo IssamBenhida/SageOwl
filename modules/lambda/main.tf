@@ -14,4 +14,14 @@ resource "aws_lambda_function" "main" {
       variables = var.environment_variables
     }
   }
+
+  dynamic "ephemeral_storage" {
+    for_each = var.ephemeral_storage_size == null ? [] : [true]
+    content {
+      size = var.ephemeral_storage_size
+    }
+  }
+
+  tags = var.tags
+
 }

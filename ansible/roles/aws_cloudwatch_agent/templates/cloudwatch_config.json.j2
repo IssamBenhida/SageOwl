@@ -1,17 +1,17 @@
 {
   "agent": {
-    "logfile": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log",
-    "metrics_collection_interval": 60,
-    "run_as_user": "root"
+    "logs": {
+      "agent_log_file": "{{ aws_cloudwatch_agent_log_file }}"
+    }
   },
   "logs": {
     "logs_collected": {
       "files": {
         "collect_list": [
           {
-            "file_path": "/root/.bash_history",
-            "log_group_name": "localstack-log-group",
-            "log_stream_name": "local-instance",
+            "file_path": "{{ aws_cloudwatch_agent_client_log_file_path }}",
+            "log_group_name": "{{ aws_cloudwatch_agent_log_group_name }}",
+            "log_stream_name": "{{ aws_cloudwatch_agent_log_stream_name }}",
             "timestamp_format": "%Y-%m-%dT%H:%M:%S.%f"
           }
         ]

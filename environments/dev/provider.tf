@@ -13,6 +13,6 @@ terraform {
 }
 
 provider "opensearch" {
-  url = "http://es-local.us-east-1.opensearch.localhost.localstack.cloud:4566"
+  url = "http://sageowl-local.us-east-1.opensearch.localhost.localstack.cloud:4566"
 }
 
