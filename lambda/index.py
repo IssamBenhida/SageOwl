@@ -52,7 +52,7 @@ def get_geo_location(ip: str) -> dict:
     except HTTPError as e:
         logger.error("Unexpected error occurred for IP %s: %s", ip, e)
         return null_response
-
+s
 
 def handler(event_data, context):
     """
