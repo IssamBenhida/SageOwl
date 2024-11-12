@@ -2,6 +2,12 @@
 - name: Setup AWS CloudWatch and Logstash agents
   hosts: all
   become: true
+  vars:
+    logstash_agent_input_log_file: "/var/log/nginx/access.log"
+    logstash_agent_output_log_file: "/var/log/sageowl/main.log"
+    aws_cloudwatch_agent_client_log_file_path: "/var/log/sageowl/main.log"
+    aws_cloudwatch_agent_log_stream_name: "on-prime"
+    aws_cloudwatch_agent_log_group_name: "sageowl"
   roles:
     - aws_cloudwatch_agent
     - logstash_agent

@@ -1,0 +1,14 @@
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: http://localhost:5601/app/notifications-dashboards
+Content-Type: application/json
+osd-version: 2.11.1
+osd-xsrf: osd-fetch
+Origin: http://localhost:5601
+Connection: keep-alive
+Cookie: jenkins-timestamper-offset=0; iconSize=24x24
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin

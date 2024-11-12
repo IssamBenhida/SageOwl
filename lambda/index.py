@@ -20,7 +20,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 # log parser for cloudwatch logs
-parser = re.compile(r'^\{.*"timestamp": "\d{2}/\w{3}/\d{4}:\d{2}:\d{2}:\d{2} \+\d{4}".*}$')
+parser = re.compile(r'^{.*}$')
 
 
 def get_geo_location(ip: str) -> dict:
@@ -52,6 +52,7 @@ def get_geo_location(ip: str) -> dict:
     except HTTPError as e:
         logger.error("Unexpected error occurred for IP %s: %s", ip, e)
         return null_response
+
 
 def handler(event_data, context):
     """
@@ -137,11 +138,11 @@ def handler(event_data, context):
                     )
                 }
                 transformed_events.append(result)
-
+                print(context)
         # Append document to output in Opensearch bulk API format
         for i, event in enumerate(transformed_events):
             output.append({
-                'recordId': str(i) + context.log_stream_name,
+                'recordId': str(i),  # + context.log_stream_name,
                 'result': 'Ok',
                 'data': base64.b64encode(
                     json.dumps(event).encode('utf-8')

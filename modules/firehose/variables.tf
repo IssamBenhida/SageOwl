@@ -84,3 +84,9 @@ variable "processing_lambda_role" {
   type        = string
   default     = null
 }
+
+variable "tags" {
+  description = "Firehose module tags."
+  type        = map(string)
+  default     = {}
+}

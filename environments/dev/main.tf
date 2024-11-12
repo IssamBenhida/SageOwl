@@ -1,3 +1,27 @@
+module "lambda" {
+  source        = "../../modules/lambda"
+  function_name = "transformer"
+  description   = "lambda function for log transformation"
+  lambda_role   = aws_iam_role.lambda_to_firehose_role.arn
+  source_path   = "../../lambda/index.py"
+  handler       = "index.handler"
+  runtime       = "python3.7"
+
+  tracing_config = {
+    mode = "PassThrough"
+  }
+
+  environment_variables = {
+    geo_api_url = "https://ipinfo.io/"
+  }
+
+  tags = {
+    department  = "security"
+    function    = "processing"
+    environment = "dev"
+  }
+}
+
 module "opensearch" {
   source             = "../../modules/opensearch"
   domain_name        = "sageowl-local"
@@ -11,6 +35,10 @@ module "opensearch" {
     volume_size = "10"
   }
 
+  timeouts = {
+    create = "3m"
+  }
+
   tags = {
     department  = "security"
     function    = "analytics"
@@ -18,26 +46,6 @@ module "opensearch" {
   }
 
   depends_on = [aws_cloudwatch_log_stream.main]
-}
-
-module "lambda" {
-  source        = "../../modules/lambda"
-  function_name = "transformer"
-  description   = "lambda function for log transformation"
-  lambda_role   = aws_iam_role.lambda_to_firehose_role.arn
-  source_path   = "../../lambda/index.py"
-  handler       = "index.handler"
-  runtime       = "python3.7"
-
-  environment_variables = {
-    geo_api_url = "https://ipinfo.io/"
-  }
-
-  tags = {
-    department  = "security"
-    function    = "processing"
-    environment = "dev"
-  }
 }
 
 module "firehose" {
@@ -68,6 +76,8 @@ resource "aws_cloudwatch_log_group" "main" {
   retention_in_days = 0
   log_group_class   = "INFREQUENT_ACCESS"
 
+  kms_key_id = aws_kms_key.main.id
+
   tags = {
     department  = "security"
     function    = "logging"
@@ -78,12 +88,6 @@ resource "aws_cloudwatch_log_group" "main" {
 resource "aws_cloudwatch_log_stream" "main" {
   log_group_name = aws_cloudwatch_log_group.main.name
   name           = "on-prime"
-
-  tags = {
-    department  = "security"
-    function    = "logging"
-    environment = "dev"
-  }
 
   depends_on = [aws_cloudwatch_log_group.main]
 }

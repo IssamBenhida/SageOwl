@@ -73,4 +73,5 @@
         path: "{{ logstash_agent_output_log_file }}"
         owner: logstash
         group: logstash
-      notify: Restart Logstash service
+      notify: Restart logstash service
+      changed_when: true

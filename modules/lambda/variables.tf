@@ -50,6 +50,12 @@ variable "ephemeral_storage_size" {
   }
 }
 
+variable "tracing_config" {
+  description = "Lambda function tracing config."
+  type = map(string)
+  default = {}
+}
+
 variable "tags" {
   description = "Lambda function tags."
   type        = map(string)

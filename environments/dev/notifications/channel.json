@@ -1,0 +1,15 @@
+{
+  "config": {
+    "name": "zibra",
+    "description": "",
+    "config_type": "email",
+    "is_enabled": true,
+    "email": {
+      "email_account_id": "$sender_id",
+      "recipient_list": [],
+      "email_group_id_list": [
+        "$receiver_id"
+      ]
+    }
+  }
+}

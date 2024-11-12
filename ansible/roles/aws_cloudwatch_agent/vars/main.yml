@@ -1,6 +1,2 @@
 ---
 # vars file for aws_cloudwatch_agent
-
-aws_cloudwatch_agent_client_log_file_path: "/var/log/sageowl/main.log"
-aws_cloudwatch_agent_log_stream_name: "on-prime"
-aws_cloudwatch_agent_log_group_name: "sageowl"

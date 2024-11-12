@@ -12,10 +12,9 @@
     {
       "detector_input": {
         "description": "apache access detector for security analytics",
-        "custom_rules": [
-          {
-            "id" : "EYdmQ5IB7BuRQjcA4gz6"
-          }
+        "custom_rules": [{
+          "id": "ID"
+        }
         ],
         "indices": [
           "sageowl_index"
@@ -23,6 +22,9 @@
         "pre_packaged_rules": [
           {
             "id": "e9a2b582-3f6a-48ac-b4a1-6849cdc50b3c"
+          },
+          {
+            "id": "1da8ce0b-855d-4004-8860-7d64d42063b1"
           }
         ]
       }
@@ -31,20 +33,21 @@
   "triggers": [
     {
       "ids": [],
-      "types": [],
+      "types": [
+        "apache_access"
+      ],
       "tags": [
-        "attack.defense_evasion"
       ],
       "severity": "1",
       "actions": [
         {
           "id": "",
-          "destination_id": "Triggered alert condition: Trigger 1 - Severity: 1 (Highest) - Threat detector: owl_trigger",
+          "destination_id": "channel_id",
           "subject_template": {
-            "source": "Trigger: ",
+            "source": "NAME",
             "lang": "mustache"
           },
-          "name": "hello_world",
+          "name": "Triggered alert condition: Trigger 1 - Severity: 1 (Highest) - Threat detector: sageowl",
           "throttle_enabled": false,
           "message_template": {
             "source": "Triggered alert condition: Trigger 1\nSeverity: 1 (Highest)\nThreat detector: \nDescription: apache access detector for security analytics\nDetector data sources:\n\tsageowl_index",
@@ -56,10 +59,10 @@
           }
         }
       ],
-      "id": "A8IqMJIBWuYkhrspDNqf",
+      "id": "",
       "sev_levels": [],
-      "name": "owl_trigger"
+      "name": "Trigger 1"
     }
   ],
-  "name": "sageowl"
+  "name": "NAME"
 }

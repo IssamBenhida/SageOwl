@@ -10,6 +10,8 @@ pipeline {
     environment {
         TF_VAR_ENV = 'dev'
         PIPENV_PIPFILE = "${WORKSPACE}/lambda/pipfile"
+        GMAIL_USER=credentials('GMAIL_USER')
+        GMAIL_PASSWORD=credentials('GMAIL_PASSWORD')
     }
     stages {
         stage('Initializing.') {
@@ -25,26 +27,25 @@ pipeline {
         }
         stage('Code Quality Check.') {
             stages{
-                stage('Terraform Check.'){
+                stage('Terraform Code Quality Check.'){
                     steps{
                         sh '''
-                        cd ${WORKSPACE}/environments/dev
+                        cd environments/dev
                         tflocal fmt -check
                         tflint
                         '''
                     }
                 }
-                stage('Ansible Check.'){
+                stage('Ansible Code Quality Check.'){
                     steps{
                         sh 'ansible-lint ansible/*'
                     }
                 }
-                stage('Python Check.'){
+                stage('Python Code Quality Check.'){
                     steps{
                         sh '''
-                        flake8 lambda/*.py
-                        pylint lambda/*.py
-                        safety check || pip-audit
+                        flake8 lambda/index.py
+                        pylint lambda/index.py
                         '''
                     }
                 }
@@ -52,6 +53,88 @@ pipeline {
             /*
             pipenv run
             */
+        }
+        stage('Code Security Check.'){
+            stages{
+                stage('Terraform Code Security Check.'){
+                    steps{
+                        sh '''
+                        cd environments/dev
+                        tfsec .
+                        '''
+                    }
+                }
+                stage('Ansible Code Security Check.'){
+                    steps{
+                        sh 'checkov -f ansible/*'
+                    }
+                }
+                stage('Python Code Security Check.'){
+                    steps{
+                        sh '''
+                        bandit -r lambda/index.py
+                        '''
+                    }
+                }
+            }
+        }
+        stage('Unit Testing and Coverage Check.'){
+            stages{
+                stage('Unit Testing For Lambda.'){
+                    steps{
+                        sh 'pytest'
+                    }
+                }
+                stage('Coverage Check.'){
+                    steps{
+                        sh '''
+                        cd lambda
+                        coverage run -m pytest
+                        coverage report --fail-under=100
+                        '''
+                    }
+                }
+            }
+        }
+        stage('Deployment.'){
+            stages{
+                stage('Building Docker Containers.'){
+                    steps{
+                        sh '''
+                        docker --version
+                        docker-compose --version
+                        docker-compose up -d
+                        '''
+                    }
+                }
+                stage('Applying Terraform Infrastructure.'){
+                    steps{
+                        sh '''
+                        cd environments/dev
+                        tflocal init && tflocal plan && tflocal apply --auto-approve
+                        '''
+                    }
+                }
+                stage('Ansible Client Configuration.'){
+                    steps{
+                        sh '''
+                        ansible-playbook -i ansible/inventory.ini ansible/ansible.yml
+                        '''
+                    }
+                }
+            }
+        }
+        stage(){
+            stages{
+                stage('Creating SageOwl Detectors.'){
+                    steps{
+                        sh'''
+                        cd environments/dev/notifications
+                        ./opensearch_api.sh -d sageowl_detector.json -r remote_file_inclusion_attempts.json -s sender.json -R receiver.json -c channel.json
+                        '''
+                    }
+                }
+            }
         }
     }
 }

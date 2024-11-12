@@ -1,0 +1,15 @@
+{
+  "config": {
+    "name": "admin",
+    "description": "admin group of sageowl.",
+    "config_type": "email_group",
+    "is_enabled": true,
+    "email_group": {
+      "recipient_list": [
+        {
+          "recipient": "i.benhida7861@uca.ac.ma"
+        }
+      ]
+    }
+  }
+}

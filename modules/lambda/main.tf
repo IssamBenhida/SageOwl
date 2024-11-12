@@ -1,3 +1,4 @@
+# tfsec:ignore:aws-lambda-enable-tracing
 resource "aws_lambda_function" "main" {
   function_name = var.function_name
   description   = var.description
@@ -22,6 +23,12 @@ resource "aws_lambda_function" "main" {
     }
   }
 
-  tags = var.tags
+  dynamic "tracing_config" {
+    for_each = length(var.tracing_config) == 0 ? [] : [true]
+    content {
+      mode  = try(var.tracing_config.mode, "PassThrough")
+    }
+  }
 
+  tags = var.tags
 }

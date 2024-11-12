@@ -52,7 +52,7 @@ resource "opensearch_index" "sageowl_index" {
         "fields" : {
           "keyword" : { "type" : "keyword" }
         }
-      }
+      },
       "http.ip.location" : {
         "type" : "geo_point"
       },

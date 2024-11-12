@@ -24,6 +24,6 @@
 
 | Name               | Description                                  |
 |--------------------|----------------------------------------------|
-| [domain_endpoin]() | Opensearch domain endpoint.                  |
+| [domain_endpoint]() | Opensearch domain endpoint.                  |
 | [engine_version]() | Opensearch domain arn.                       |
 | [instance_type]()  | OpenSearch cluster availability zones count. |

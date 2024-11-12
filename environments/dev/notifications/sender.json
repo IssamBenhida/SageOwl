@@ -1,0 +1,13 @@
+{
+  "config": {
+    "name": "sender",
+    "config_type": "smtp_account",
+    "is_enabled": true,
+    "smtp_account": {
+      "host": "10.0.2.30",
+      "port": "1025",
+      "method": "none",
+      "from_address": "sageowl@exemple.com"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #ee5804;
+            color: #ffffff;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .header img {
+            width: 50px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .content p {
+            margin: 0 0 10px;
+        }
+
+        .footer {
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .alert-info {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #ee5804;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .alert-info h3 {
+            margin-top: 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ee5804;
+            color: #ffffff;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>New Security Event Detected</h2>
+    </div>
+    <div class="content">
+        <div style="text-align: center;">
+            <img src="cid:logo_cid" alt="Alert Icon" height="40%" width="40%">
+        </div>
+        <p>A security alert has been triggered in your environment. Please review the details below:</p>
+        <div class="alert-info">
+            <p><strong>Severity:</strong> Warning</p>
+            <p><strong>Threat Detector:</strong> $detected_rule</p>
+            <p><strong>Time: $timestamp</strong></p>
+        </div>
+        <p>For further details, please access your SIEM dashboard.</p>
+        <p><a style="color: white; text-decoration: none;"
+              href="http://http://localhost:5601/app/opensearch_security_analytics_dashboards#/overview" class="button">View
+            Dashboard</a></p>
+    </div>
+    <div class="footer">
+        &copy; 2024 Sageowl SIEM. All rights reserved.
+    </div>
+</div>
+</body>
+</html>

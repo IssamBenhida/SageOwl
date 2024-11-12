@@ -39,4 +39,4 @@
     - name: Deploy CloudWatch agent
       ansible.builtin.command: "{{ aws_cloudwatch_agent_path }} -a fetch-config -m onPremise -c file:{{ aws_cloudwatch_agent_config_path }} -s"
       notify: Restart amazon cloudWatch agent
-      changed_when: false
+      changed_when: true
