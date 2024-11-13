@@ -17,122 +17,98 @@ pipeline {
         stage('Initializing.') {
             steps {
                 echo 'installing environment dependencies...'
-                timeout(time: 5, unit: 'MINUTES') {
-                    git branch: 'main',
-                        url: 'https://github.com/issambenhida/sageowl.git',
-                        credentialsId: '01'
-                }
-                /* sh 'pipenv install' */
+                /* sh '''
+                pipenv install
+                pipenv run
+                ''' */
             }
         }
         stage('Code Quality Check.') {
-            stages{
-                stage('Terraform Code Quality Check.'){
-                    steps{
-                        sh '''
-                        cd environments/dev
-                        tflocal fmt -check
-                        tflint
-                        '''
-                    }
-                }
-                stage('Ansible Code Quality Check.'){
-                    steps{
-                        sh 'ansible-lint ansible/*'
-                    }
-                }
-                stage('Python Code Quality Check.'){
-                    steps{
-                        sh '''
-                        flake8 lambda/index.py
-                        pylint lambda/index.py
-                        '''
-                    }
+            steps{
+                script{
+                    echo 'Running Terraform, Ansible, and Python code quality checks...'
+                    sh '''
+                    # Terraform Code Quality Checks
+                    cd environments/dev
+                    tflocal fmt -check
+                    tflint
+
+                    # Ansible Code Quality Checks
+                    cd ../../
+                    ansible-lint ansible/*
+
+                    # Python Code Quality Checks
+                    flake8 lambda/index.py
+                    pylint lambda/index.py
+                    '''
                 }
             }
-            /*
-            pipenv run
-            */
         }
         stage('Code Security Check.'){
-            stages{
-                stage('Terraform Code Security Check.'){
-                    steps{
-                        sh '''
-                        cd environments/dev
-                        tfsec .
-                        '''
-                    }
-                }
-                stage('Ansible Code Security Check.'){
-                    steps{
-                        sh 'checkov -f ansible/*'
-                    }
-                }
-                stage('Python Code Security Check.'){
-                    steps{
-                        sh '''
-                        bandit -r lambda/index.py
-                        '''
-                    }
+            steps{
+                script{
+                    echo 'Running Terraform, Ansible, and Python code security checks...'
+                    sh '''
+                    # Terraform Code Security Checks
+                    cd environments/dev
+                    tfsec .
+
+                    # Ansible Code Security Checks
+                    cd ../../
+                    checkov -f ansible/*
+
+                    # Python Code Security Checks
+                    bandit -r lambda/index.py
+                    '''
                 }
             }
         }
         stage('Unit Testing and Coverage Check.'){
-            stages{
-                stage('Unit Testing For Lambda.'){
-                    steps{
-                        sh 'pytest'
-                    }
-                }
-                stage('Coverage Check.'){
-                    steps{
-                        sh '''
-                        cd lambda
-                        coverage run -m pytest
-                        coverage report --fail-under=100
-                        '''
-                    }
+            steps{
+                script {
+                    echo 'Running unit tests and coverage check for Lambda...'
+                    sh '''
+                    # Unit Testing for Lambda
+                    cd lambda
+                    pytest
+
+                    # Coverage Check
+                    coverage run -m pytest
+                    coverage report --fail-under=100
+                    '''
                 }
             }
         }
-        stage('Deployment.'){
-            stages{
-                stage('Building Docker Containers.'){
-                    steps{
-                        sh '''
-                        docker --version
-                        docker-compose --version
-                        docker-compose up -d
-                        '''
-                    }
-                }
-                stage('Applying Terraform Infrastructure.'){
-                    steps{
-                        sh '''
-                        cd environments/dev
-                        tflocal init && tflocal plan && tflocal apply --auto-approve
-                        '''
-                    }
-                }
-                stage('Ansible Client Configuration.'){
-                    steps{
-                        sh '''
-                        ansible-playbook -i ansible/inventory.ini ansible/ansible.yml
-                        '''
-                    }
+        stage('Deploying Infrastructure.') {
+            steps{
+                script {
+                    echo 'Building Docker containers and applying Terraform infrastructure...'
+                    sh '''
+                    # Docker Setup
+                    docker-compose up -d
+
+                    # Wait 10 sec
+                    sleep 10
+
+                    # Apply Terraform Infrastructure
+                    cd environments/dev
+                    tflocal init && tflocal apply --auto-approve
+
+                    # Ansible Client Configuration
+                    cd ../../
+                    ansible-playbook -i ansible/inventory.ini ansible/ansible.yml
+                    '''
                 }
             }
         }
-        stage(){
-            stages{
-                stage('Creating SageOwl Detectors.'){
-                    steps{
-                        sh'''
-                        cd environments/dev/notifications
-                        ./opensearch_api.sh -d sageowl_detector.json -r remote_file_inclusion_attempts.json -s sender.json -R receiver.json -c channel.json
-                        '''
-                    }
+        stage('Automated Testing and Reporting.'){
+            steps{
+                script {
+                    echo 'Creating SageOwl detectors and setting up notifications...'
+                    sh '''
+                    cd environments/dev/notifications
+                    ./opensearch_api.sh -d sageowl_detector.json -r remote_file_inclusion_attempts.json -s sender.json -R receiver.json -c channel.json
+                    '''
                 }
             }
         }
