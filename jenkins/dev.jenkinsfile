@@ -84,7 +84,7 @@ pipeline {
                 script {
                     echo 'Building Docker containers and applying Terraform infrastructure...'
                     sh '''
-                    # Docker Setup
+                    # Docker Compose Setup
                     docker-compose up -d
 
                     # Wait 10 sec
