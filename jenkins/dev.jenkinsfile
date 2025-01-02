@@ -97,7 +97,7 @@ pipeline {
 
                     # Ansible Client Configuration
                     cd ../../
-                    ansible-playbook -i ansible/inventory.ini ansible/ansible.yml
+                    #ansible-playbook -i ansible/inventory.ini ansible/ansible.yml
                     '''
                 }
             }
