@@ -92,6 +92,7 @@ pipeline {
 
                     # Apply Terraform Infrastructure
                     cd environments/dev
+                    export AWS_ENDPOINT_URL="http://localhost.localstack.cloud:4566"
                     tflocal init && tflocal apply --auto-approve
 
                     # Ansible Client Configuration
