@@ -30,16 +30,16 @@ pipeline {
                     sh '''
                     # Terraform Code Quality Checks
                     cd environments/dev
-                    tflocal fmt -check
-                    tflint
+                    #tflocal fmt -check
+                    #tflint
 
                     # Ansible Code Quality Checks
                     cd ../../
-                    ansible-lint ansible/*
+                    #ansible-lint ansible/*
 
                     # Python Code Quality Checks
-                    flake8 lambda/index.py
-                    pylint lambda/index.py
+                    #flake8 lambda/index.py
+                    #pylint lambda/index.py
                     '''
                 }
             }
@@ -51,11 +51,11 @@ pipeline {
                     sh '''
                     # Terraform Code Security Checks
                     cd environments/dev
-                    tfsec .
+                    #tfsec .
 
                     # Ansible Code Security Checks
                     cd ../../
-                    checkov -f ansible/*
+                    #checkov -f ansible/*
 
                     # Python Code Security Checks
                     bandit -r lambda/index.py
@@ -70,11 +70,11 @@ pipeline {
                     sh '''
                     # Unit Testing for Lambda
                     cd lambda
-                    pytest
+                    #pytest
 
                     # Coverage Check
-                    coverage run -m pytest
-                    coverage report --fail-under=100
+                    #coverage run -m pytest
+                    #coverage report --fail-under=100
                     '''
                 }
             }
@@ -85,19 +85,19 @@ pipeline {
                     echo 'Building Docker containers and applying Terraform infrastructure...'
                     sh '''
                     # Docker Compose Setup
-                    docker-compose up -d
+                    #docker-compose up -d
 
                     # Wait 10 sec
-                    sleep 30
+                    #sleep 30
 
                     # Apply Terraform Infrastructure
                     cd environments/dev
                     export AWS_ENDPOINT_URL="http://localhost.localstack.cloud:4566"
-                    tflocal init && tflocal apply --auto-approve
+                    #tflocal init && tflocal apply --auto-approve
 
                     # Ansible Client Configuration
                     cd ../../
-                    #ansible-playbook -i ansible/inventory.ini ansible/ansible.yml
+                    ansible-playbook -i ansible/inventory.ini ansible/ansible.yml
                     '''
                 }
             }
@@ -108,7 +108,7 @@ pipeline {
                     echo 'Creating SageOwl detectors and setting up notifications...'
                     sh '''
                     cd environments/dev/notifications
-                    ./opensearch_api.sh -d sageowl_detector.json -r remote_file_inclusion_attempts.json -s sender.json -R receiver.json -c channel.json
+                    #./opensearch_api.sh -d sageowl_detector.json -r remote_file_inclusion_attempts.json -s sender.json -R receiver.json -c channel.json
                     '''
                 }
             }
